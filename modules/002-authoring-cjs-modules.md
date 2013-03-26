@@ -95,7 +95,7 @@ For instance, cujo.js's cram.js will wrap CommonJS modules inside AMD modules an
 
 Unfortunately, most of these tools require a build step to convert from an authoring format to a transport format.  (cujo.js's curl.js does not require a build step, in most cases.)  The build step complicates the development process and makes it harder to get started on a new project.  
 
-*Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for another tutorial.  
+*Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for [another tutorial](003-authoring-umd-modules.md).  
 
 For further reading on CommonJS Modules, visit http://wiki.commonjs.org/wiki/Modules/1.1/.
 
