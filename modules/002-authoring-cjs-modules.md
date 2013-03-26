@@ -29,7 +29,7 @@ console.log(module.id); // should log "app/mime-client"
 exports.client = client;
 ```
 
-The first thing you might notice is that there's no wrapper around this code, such as an [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) or [AMD](001-authoring-AMD-modules.md)'s `define(factory)`.  It also appears as if we are working with global variables.  We are not!  Since each file executes in its own *module scope*, the `var` statements actually declare variables that are scoped to the module, just as if it were wrapped in a function.  
+The first thing you might notice is that there's no wrapper around this code, such as an [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) or [AMD](001-authoring-amd-modules.md)'s `define(factory)`.  It also appears as if we are working with global variables.  We are not!  Since each file executes in its own *module scope*, the `var` statements actually declare variables that are scoped to the module, just as if it were wrapped in a function.  
 
 Of course, the three CommonJS variables, `require`, `exports`, and `module`, are also scoped to the module.  Let's investigate each one in detail.
 
