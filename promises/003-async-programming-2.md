@@ -1,6 +1,6 @@
-In [Part 1](http://blog.briancavalier.com/async-programming-part-1-its-messy), we looked at the awkward situation created when we introduce callbacks to handle even a single asynchronous operation into an otherwise simple set of function calls.
+In [Part 1](002-async-programming-1.md), we looked at the awkward situation created when we introduce callbacks to handle even a single asynchronous operation into an otherwise simple set of function calls.
 
-As a quick review, have a look back at the [code we started with](https://gist.github.com/1790802), the [messy end result](https://gist.github.com/1790826) when using callbacks, and the things we'd like to fix in order to get back to sanity:
+As a quick review, have a look back at the [code we started with](002-async-programming-1.md), the [messy end result](002-async-programming-1.md#more-async) when using callbacks, and the things we'd like to fix in order to get back to sanity:
 
 1. We can no longer use a simple call-and-return programming model
 1. We can no longer handle errors using try/catch/finally
@@ -14,7 +14,7 @@ Promises also provide a simple API (see note below) for being notified when the 
 
 Promises are [not a new concept](http://en.wikipedia.org/wiki/Futures_and_promises), and have been implemented in many languages. While several implementations of the Promise concept in Javascript have been around for a while, they have started to gain more popularity recently as we start to build bigger, more complex systems that require coordinating more asynchronous tasks.
 
-(NOTE: Although there are [several proposed](http://wiki.commonjs.org/wiki/Promises) Promise API standards, [Promises/A+](http://promises-aplus.github.com/promises-spec/) appears to be becoming the *defacto standard*. In any case, the basic concepts are the same: 1) Promises act as a placeholder for a result or error, 2) they provide a way to be notified when the actual result has materialized, or when a failure has occurred.)
+(NOTE: Although there are [several proposed](http://wiki.commonjs.org/wiki/Promises) Promise API standards, [Promises/A+](http://promises-aplus.github.com/promises-spec/) is becoming the *defacto standard*. In any case, the basic concepts are the same: 1) Promises act as a placeholder for a result or error, 2) they provide a way to be notified when the actual result has materialized, or when a failure has occurred.)
 
 # The Canonical XHR Example
 
@@ -46,7 +46,7 @@ By using Promises, we can restore the familiar call-and-return programming model
 
 ## Restoring Call-and-return
 
-To see how this works, let's start with a simplified version of the [synchronous `getTheResult` function](https://gist.github.com/1790802) from [Part 1](http://blog.briancavalier.com/async-programming-part-1-its-messy), without try/catch so that exceptions will always propagate up the call stack.
+To see how this works, let's start with a simplified version of the [synchronous `getTheResult` function from Part1](002-async-programming-1.md), without try/catch so that exceptions will always propagate up the call stack.
 
 ```js
 function thisMightFail() {
@@ -188,4 +188,4 @@ So, while one way to think of Promises is as a standard API to callback registra
 
 Now that we've restored call-and-return and removed callbacks from our function signatures, we need a way to handle failures.  Ideally, we'd like to use try/catch/finally, or at least something that *looks and acts just like it* and works in the face of asynchrony.
 
-In Part 3, we'll put the final piece of the puzzle into place, and see how to model try/catch/finally using Promises.
+In Part 3(*link forthcoming*), we'll put the final piece of the puzzle into place, and see how to model try/catch/finally using Promises.

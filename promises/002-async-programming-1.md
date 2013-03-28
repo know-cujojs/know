@@ -149,4 +149,4 @@ Using callbacks for asynchronous programming changes the basic programming model
 
 We can do better. There is another model for asynchronous programming in Javascript that more closely resembles standard call-and-return, follows a model more like try/catch/finally, and doesn't force us to add two callback parameters to a large number of functions.
 
-Next, we'll look at **Promises**, and how they help to bring asynchronous programming back to a model that is simpler and more familiar.
+In [Part 2](002-async-programming-2.md), we'll look at **Promises**, and how they help to bring asynchronous programming back to a model that is simpler and more familiar.
