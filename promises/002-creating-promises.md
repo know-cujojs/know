@@ -19,10 +19,10 @@ function increment(count) {
     return count + 1;
 }
 
-promise.then(increment)  // 0
-       .then(increment)  // 1
-       .then(increment)  // 2
-       .then(increment)  // 3
+promise.then(increment)   // 0
+       .then(increment)   // 1
+       .then(increment)   // 2
+       .then(increment);  // 3
 ```
 
 We can keep this chain going forever.  The returned value from one callback will be used as the value of the next promise.  The same chaining affect applies to error handlers as well.  It's important to keep in mind that once a promise is in error, subsequent promises will continue in error, until the error is handled.
