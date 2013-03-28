@@ -1,4 +1,6 @@
-# Exceptions and try/catch
+# Async Programming Part 1: It's Messy
+
+## Exceptions and try/catch
 
 Exceptions and try/catch are an intuitive way to execute operations that may fail.  They allow us to recover from the failure, or to let the failure propagate up the call stack to a caller by either not catching the exception, or explicitly re-throwing it.
 
@@ -35,7 +37,7 @@ function getTheResult() {
 
 In this case, `getTheResult` handles the case where `thisMightFail` does indeed fail and throws an `Error` by catching the `Error` and calling `recoverFromFailure` (which could return some default result, for example).  This works because `thisMightFail` is *synchronous*.
 
-# Going Async
+## Going Async
 
 What if `thisMightFail` is *asynchronous*?  For example, it may perform an asynchronous XHR to fetch the result data:
 
@@ -135,11 +137,11 @@ function getTheResult(callback, errback) {
 
 The code has gone from a simple try/catch to deeply nested callbacks, with `callback` and `errback` in every function signature, plus additional logic to check whether it's safe to call them, and, ironically, *two try/catch blocks* to ensure that `recoverFromFailure` can indeed recover from a failure.
 
-## And what about finally?
+### And what about finally?
 
 Imagine if we were also to introduce `finally` into the mix--things would need to become even more complex.  There are essentially two options, neither of which is as simple and elegant as the language-provided `finally` clause. We could: 1) add an `alwaysback` callback to all function signatures, with the accompanying checks to ensure it is safely callable, or 2) always write our callback/errback to handle errors internally, and be sure to invoke `alwaysback` in all cases.
 
-# Summary
+## Summary
 
 Using callbacks for asynchronous programming changes the basic programming model, creating the following situation:
 

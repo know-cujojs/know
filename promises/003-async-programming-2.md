@@ -1,3 +1,5 @@
+# Async Programming Part 2: Promises
+
 In [Part 1](002-async-programming-1.md), we looked at the awkward situation created when we introduce callbacks to handle even a single asynchronous operation into an otherwise simple set of function calls.
 
 As a quick review, have a look back at the [code we started with](002-async-programming-1.md), the [messy end result](002-async-programming-1.md#more-async) when using callbacks, and the things we'd like to fix in order to get back to sanity:
@@ -6,7 +8,7 @@ As a quick review, have a look back at the [code we started with](002-async-prog
 1. We can no longer handle errors using try/catch/finally
 1. We must add callback and errback parameters to every function signature that might eventually lead to an asynchronous operation
 
-# Promises
+## Promises
 
 A Promise (aka Future, Delayed value, Deferred value) represents a value that is not yet available because the computation that will produce the value has not yet completed.  A Promise is a *placeholder* into which the successful result or reason for failure will eventually materialize.
 
@@ -16,7 +18,7 @@ Promises are [not a new concept](http://en.wikipedia.org/wiki/Futures_and_promis
 
 (NOTE: Although there are [several proposed](http://wiki.commonjs.org/wiki/Promises) Promise API standards, [Promises/A+](http://promises-aplus.github.com/promises-spec/) is becoming the *defacto standard*. In any case, the basic concepts are the same: 1) Promises act as a placeholder for a result or error, 2) they provide a way to be notified when the actual result has materialized, or when a failure has occurred.)
 
-# The Canonical XHR Example
+## The Canonical XHR Example
 
 In the case of an XHR Get, the value we care about is the content of the url we're fetching.  We know that XHR is an asynchonous operation, and that the value won't be available immediately.  That fits the definition of a Promise perfectly.
 
@@ -38,13 +40,13 @@ function thisMightFail() {
 
 Now, we can return the Promise placeholder *as if it were the real result*, and our asynchronous `thisMightFail` function looks very much like a plain old synchronous, call-and-return operation.
 
-# Taking Back the Stack
+## Taking Back the Stack
 
 In a non-callback world, results and errors flow back *up* the call stack.  This is expected and familiar.  In a callback-based world, as we've seen, results and errors no longer follow that familiar model, and instead, callbacks must flow *down*, deeper into the stack.
 
 By using Promises, we can restore the familiar call-and-return programming model, and remove the callbacks.
 
-## Restoring Call-and-return
+### Restoring Call-and-return
 
 To see how this works, let's start with a simplified version of the [synchronous `getTheResult` function from Part1](002-async-programming-1.md), without try/catch so that exceptions will always propagate up the call stack.
 
@@ -87,11 +89,11 @@ function getTheResult() {
 
 Using Promises, `getTheResult()` is identical in the synchronous and asynchronous cases!  And in both, the successful result *or the failure* will propagate *up* the stack to the caller.
 
-## Removing Callbacks
+### Removing Callbacks
 
 Notice also that there are no callbacks or errbacks (or alwaysbacks!) being passed down the callstack, and they haven't polluted any of our function signatures.  By using Promises, our functions now *look and act* like the familiar, synchronous, call-and-return model.
 
-## Done?
+### Done?
 
 We've used Promises to refactor our simplified `getTheResult` function, and fix two of the problems we identified in Part 1.  We've:
 
@@ -100,7 +102,7 @@ We've used Promises to refactor our simplified `getTheResult` function, and fix 
 
 But, what does this mean for callers of `getTheResult`?  Remember that we're returning a Promise, and eventually, either the successful result (the result of the XHR) or an error will materialize into the Promise placeholder, at which point the caller will want to take some action.
 
-# What about the Caller?
+## What about the Caller?
 
 As mentioned above, Promises provide an API for being notified when either the result or failure becomes available.  For example, in the proposed Promises/A+ spec, a Promise has a `.then()` method, and many promise libraries provide a `when()` function that achieves the same goal.
 
@@ -159,11 +161,11 @@ getTheResult().then(
 );
 ```
 
-# WAT
+## WAT
 
 Wasn't the whole point of this Promises stuff to *avoid using callbacks*?  And here we are using them?!?
 
-# Stay with Me
+## Stay with Me
 
 In Javascript, Promises are implemented using callbacks because there is no language-level construct for dealing with asynchrony.  Callbacks are a necessary *implementation detail* of Promises.  If Javascript provided, or possibly when it does provide in the future, other language constructs, promises could be implemented differently.
 
@@ -184,7 +186,7 @@ Third, a Promise makes a set of *guarantees* about how and when callbacks and er
 
 So, while one way to think of Promises is as a standard API to callback registration, they also provide standard, predictable *behavior* for how and when a callback will be called, exception handling, etc.
 
-# What about try/catch/finally?
+## What about try/catch/finally?
 
 Now that we've restored call-and-return and removed callbacks from our function signatures, we need a way to handle failures.  Ideally, we'd like to use try/catch/finally, or at least something that *looks and acts just like it* and works in the face of asynchrony.
 
