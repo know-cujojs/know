@@ -72,7 +72,7 @@ setTimeout(function () {
 }, 60000);
 ```
 
-From this very simple behavior, we can start to derive sophisticated systems, but let's not get ahead of ourselves.  In the next tutorial, we'll explore how to create promises for others to consume.
+From this very simple behavior, we can start to derive sophisticated systems, but let's not get ahead of ourselves.  In the next tutorial, we'll explore how to [create promises for others to consume](002-creating-promises.md).
 
 
 
