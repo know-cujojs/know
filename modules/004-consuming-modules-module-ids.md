@@ -151,5 +151,5 @@ define(function (require) {
 ids and not urls?
 
 See the next tutorial
-[Consuming Modules: Locating Modules](005-consuming-modules-locating-module.md)
+[Consuming Modules: Locating Modules](005-consuming-locating-modules-in-amd.md)
 for more information.
