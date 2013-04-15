@@ -1,0 +1,12 @@
+---
+layout: 'page'
+title: 'Promises Tutorials'
+---
+
+each tutorial in getFilesAtPath("./promises/", { order: 1 }).toJSON()
+  section
+    h3
+      a(href=tutorial.url)= tutorial.title
+    div= formatDate(tutorial.date, 'YYYY-MM-DD')
+    if tutorial.summary
+      div= tutorial.summary

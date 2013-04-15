@@ -1,4 +1,12 @@
-# Authoring CommonJS Modules
+---
+layout: tutorial
+title: Authoring CommonJS Modules
+summary: 'CommonJS style modules are typically found on the server, including Node.js'
+tags: ['tutorial', 'modules', 'commonjs', 'curl']
+url: '/tutorials/modules/authoring-cjs-modules'
+urls: ['/tutorials/modules/authoring-cjs-modules.html.md']
+order: 2
+---
 
 CommonJS modules were conceived during the early days of server-side JavaScript environments such as node.js and Narwhal.  As a result, CommonJS modules are optimized for these environments, not browser environments.
 
@@ -29,7 +37,7 @@ console.log(module.id); // should log "app/mime-client"
 exports.client = client;
 ```
 
-The first thing you might notice is that there's no wrapper around this code, such as an [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) or [AMD](001-authoring-amd-modules.md)'s `define(factory)`.  It also appears as if we are working with global variables.  We are not!  Since each file executes in its own *module scope*, the `var` statements actually declare variables that are scoped to the module, just as if it were wrapped in a function.  
+The first thing you might notice is that there's no wrapper around this code, such as an [IIFE](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) or [AMD](./authoring-amd-modules.html.md)'s `define(factory)`.  It also appears as if we are working with global variables.  We are not!  Since each file executes in its own *module scope*, the `var` statements actually declare variables that are scoped to the module, just as if it were wrapped in a function.  
 
 Of course, the three CommonJS variables, `require`, `exports`, and `module`, are also scoped to the module.  Let's investigate each one in detail.
 
@@ -95,7 +103,7 @@ For instance, cujo.js's cram.js will wrap CommonJS modules inside AMD modules an
 
 Unfortunately, most of these tools require a build step to convert from an authoring format to a transport format.  (cujo.js's curl.js does not require a build step, in most cases.)  The build step complicates the development process and makes it harder to get started on a new project.  
 
-*Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for [another tutorial](003-authoring-umd-modules.md).  
+*Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for [another tutorial](./authoring-umd-modules.html.md).  
 
 For further reading on CommonJS Modules, visit http://wiki.commonjs.org/wiki/Modules/1.1/.
 

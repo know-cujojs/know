@@ -1,7 +1,15 @@
-# Consuming Modules: Module Ids
+---
+layout: tutorial
+title: Consuming Modules: Module Ids
+summary: ''
+tags: ['tutorial', 'modules', 'curl']
+url: '/tutorials/modules/consuming-modules-module-ids'
+urls: ['/tutorials/modules/consuming-modules-module-ids.html.md']
+order: 4
+---
 
 As we discussed briefly in
-[Authoring AMD Modules](001-authoring-amd-modules.md), some modules require
+[Authoring AMD Modules](./authoring-amd-modules.html.md), some modules require
 other modules to do their work.  The module author specifies these other
 modules by listing each module's *id* in the dependency list or in a
 "local require".
@@ -151,5 +159,5 @@ define(function (require) {
 ids and not urls?
 
 See the next tutorial
-[Consuming Modules: Locating Modules](005-consuming-locating-modules-in-amd.md)
+[Consuming Modules: Locating Modules](./consuming-locating-modules-in-amd.html.md)
 for more information.

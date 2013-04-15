@@ -1,4 +1,12 @@
-# Authoring AMD Modules
+---
+layout: tutorial
+title: Authoring AMD Modules
+summary: 'AMD modules are typically found in browser based environments where resources are fetched over a network'
+tags: ['tutorial', 'modules', 'amd', 'curl']
+url: '/tutorials/modules/authoring-amd-modules'
+urls: ['/tutorials/modules/authoring-amd-modules.html.md']
+order: 1
+---
 
 AMD (Asynchronous Module Definition) is the most widely supported JavaScript module format.  It's used by cujo.js, jQuery, dojo, Mootools, and several dozen other libraries and frameworks.  AMD was designed to be a format that is optimal in any browser environment, but can be used in non-browser environments, as well.  
 
@@ -37,7 +45,7 @@ Inside the factory, we create the "app/mime-client" module *and return it*.  In 
 
 ## AMD-wrapped CommonJS
 
-AMD supports another `define` signature that helps bridge the gap between AMD and [CommonJS](002-authoring-cjs-modules.md).  If your factory function accepts parameters, but you omit the dependency array, the AMD environment assumes you wish to emulate a CommonJS module environment.  The standard `require`, `exports`, and `module` variables are injected as parameters to the factory.  This variation is often called "AMD-wrapped CommonJS", surprisingly. ;)
+AMD supports another `define` signature that helps bridge the gap between AMD and [CommonJS](./authoring-cjs-modules.html.md).  If your factory function accepts parameters, but you omit the dependency array, the AMD environment assumes you wish to emulate a CommonJS module environment.  The standard `require`, `exports`, and `module` variables are injected as parameters to the factory.  This variation is often called "AMD-wrapped CommonJS", surprisingly. ;)
 
 Here's the previous example as AMD-wrapped CommonJS.
 

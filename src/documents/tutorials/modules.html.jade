@@ -1,0 +1,12 @@
+---
+layout: 'page'
+title: 'Modules Tutorials'
+---
+
+each tutorial in getFilesAtPath("./modules/", { order: 1 }).toJSON()
+  section
+    h3
+      a(href=tutorial.url)= tutorial.title
+    div= formatDate(tutorial.date, 'YYYY-MM-DD')
+    if tutorial.summary
+      div= tutorial.summary

@@ -1,0 +1,13 @@
+---
+title: Tutorials
+layout: page
+pageOrder: 1
+---
+
+
+each tutorial in getFiles({ url: /^\/tutorials\/[^/]+$/ }, { title: 1 }).toJSON()
+  section
+    h3
+      a(href=tutorial.url)= tutorial.title
+    if tutorial.summary
+      div= tutorial.summary

@@ -1,6 +1,14 @@
-# Authoring UMD Modules
+---
+layout: tutorial
+title: Authoring UMD Modules
+summary: 'UMD bridges AMD and CommonJS modules into a single, universal module format'
+tags: ['tutorial', 'modules', 'umd', 'amd', 'commonjs', 'curl']
+url: '/tutorials/modules/authoring-umd-modules'
+urls: ['/tutorials/modules/authoring-umd-modules.html.md']
+order: 3
+---
 
-If you plan to run your code in a browser, [AMD modules](001-authoring-amd-modules.md) are a great choice.  However, if your code will run in a server-side environment, such as RingoJS or node.js, [CommonJS modules](002-authoring-cjs-modules.md) are probably the easiest option.  
+If you plan to run your code in a browser, [AMD modules](./authoring-amd-modules.html.md) are a great choice.  However, if your code will run in a server-side environment, such as RingoJS or node.js, [CommonJS modules](./authoring-cjs-modules.html.md) are probably the easiest option.  
 
 What if you need your code to run in browsers and server-side environments?  
 
@@ -22,7 +30,7 @@ Here they are in no particular order.
 
 ---
 
-If you haven't done so already, please review the tutorials on [Authoring AMD modules](001-authoring-amd-modules.md) and [Authoring CommonJS modules](001-authoring-cjs-modules.md) before proceeding.
+If you haven't done so already, please review the tutorials on [Authoring AMD modules](./authoring-amd-modules.html.md) and [Authoring CommonJS modules](./authoring-cjs-modules.html.md) before proceeding.
 
 ---
 

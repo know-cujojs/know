@@ -1,8 +1,16 @@
-# Higher Order Promises with when.js
+---
+title: 'Higher Order Promises with when.js'
+layout: 'tutorial'
+summary: 'limitations with normal higher order functions in a promise environment, and how when.js solve these issues.'
+tags: ['tutorial', 'promises', 'when', 'higher order functions']
+url: '/tutorials/promises/higher-order-promises-with-when'
+urls: ['/tutorials/promises/higher-order-promises-with-when.html.md']
+order: 3
+---
 
 One of JavaScript's great strengths is the ability to fuse object oriented and functional programming styles.  Higher order functions are a concept in functional programming where we apply a simple function to a larger collection of data to produce a new, transformed collection.  Put simply, they are methods that accept functions as arguments.
 
-In previous tutorials we looked at [how to consume promises](./001-consuming-promises.md) and [how to create promises](./002-creating-promises.md). In this tutorial, we'll look at limitations with normal higher order functions in a promise environment, and how [when.js](https://github.com/cujojs/when) solve these issues.
+In previous tutorials we looked at [how to consume promises](./consuming-promises.html.md) and [how to create promises](./creating-promises.html.md). In this tutorial, we'll look at limitations with normal higher order functions in a promise environment, and how [when.js](https://github.com/cujojs/when) solve these issues.
 
 `Array.prototype.map` applies a function to each element in an array, creating a new array containing the return value of the function invocation.
 

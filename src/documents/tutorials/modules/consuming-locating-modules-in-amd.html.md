@@ -1,6 +1,14 @@
-# Consuming Modules: Locating Modules in AMD
+---
+layout: tutorial
+title: Consuming Modules: Locating Modules in AMD
+summary: ''
+tags: ['tutorial', 'modules', 'curl']
+url: '/tutorials/modules/consuming-locating-modules-in-amd'
+urls: ['/tutorials/modules/consuming-locating-modules-in-amd.html.md']
+order: 5
+---
 
-Ok, so [module ids](004-consuming-modules-module-ids.md) seem simple enough:
+Ok, so [module ids](./consuming-modules-module-ids.html.md) seem simple enough:
 slashes delineate terms, which represent hierarchies of modules.  Ultimately,
 though, AMD environments must locate modules.  The ids must somehow resolve
 to uris.  It's possible that the uris resolve to records in a database

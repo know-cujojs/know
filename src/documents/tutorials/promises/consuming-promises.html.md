@@ -1,4 +1,12 @@
-# Consuming Promises
+---
+layout: tutorial
+title: Consuming Promises
+summary: 'what to do when a method returns a promise'
+tags: ['tutorial', 'promises']
+url: '/tutorials/promises/consuming-promises'
+urls: ['/tutorials/promises/consuming-promises.html.md']
+order: 1
+---
 
 GUI developers are familiar with the phrase "don't block the UI thread."  In JavaScript, everything executes in the 'UI thread,' if you lock that thread, your application will grind to a halt.  Animations will freeze, keystrokes and clicks will be ignored, heck it’s unlikely you’ll even be able to scroll.  There are ways to deal with waiting for long running tasks to complete, an increasingly popular approach to solving this problem are promises.  The [cujo.js](http://cujojs.com/) family of libraries make extensive use of promises, understanding how to consume a promise is essential.
 

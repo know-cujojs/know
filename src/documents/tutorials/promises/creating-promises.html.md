@@ -1,7 +1,14 @@
-Creating Promises
-=================
+---
+layout: 'tutorial'
+title: 'Creating Promises'
+summary: 'create promises with a promise library'
+tags: ['tutorial', 'promises', 'when']
+url: '/tutorials/promises/creating-promises'
+urls: ['/tutorials/promises/creating-promises.html.md']
+order: 2
+---
 
-In the [Consuming Promises tutorial](001-consuming-promises.md), we looked at how to work with existing promises, let's shift focus and now look at how to create promises.  With a promise library, it's really quite easy.  There are many [Promises/A+](http://promises-aplus.github.com/promises-spec/) compliant libraries, including Cujo’s [when.js](https://github.com/cujojs/when).
+In the [Consuming Promises tutorial](./consuming-promises.html.md), we looked at how to work with existing promises, let's shift focus and now look at how to create promises.  With a promise library, it's really quite easy.  There are many [Promises/A+](http://promises-aplus.github.com/promises-spec/) compliant libraries, including Cujo’s [when.js](https://github.com/cujojs/when).
 
 
 Promise Chains
