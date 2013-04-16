@@ -1,0 +1,8 @@
+---
+applications:
+- name: know
+  memory: 256M
+  instances: 2
+  url: know.${target-base}
+  path: .
+  command: node server.js
