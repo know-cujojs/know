@@ -5,6 +5,8 @@ summary: 'create promises with a promise library'
 tags: ['tutorial', 'promises', 'when']
 url: '/tutorials/promises/creating-promises'
 urls: ['/tutorials/promises/creating-promises.html.md']
+ctime: 2013-03-28
+mtime: 2013-03-28
 order: 2
 ---
 

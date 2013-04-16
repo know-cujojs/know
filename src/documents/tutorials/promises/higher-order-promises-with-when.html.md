@@ -5,6 +5,8 @@ summary: 'limitations with normal higher order functions in a promise environmen
 tags: ['tutorial', 'promises', 'when', 'higher order functions']
 url: '/tutorials/promises/higher-order-promises-with-when'
 urls: ['/tutorials/promises/higher-order-promises-with-when.html.md']
+ctime: 2013-04-09
+mtime: 2013-04-09
 order: 3
 ---
 

@@ -3,10 +3,11 @@ layout: 'page'
 title: 'Modules Tutorials'
 ---
 
-each tutorial in getFilesAtPath("./modules/", { order: 1 }).toJSON()
-  section
-    h3
+nav.linklist
+  each tutorial in getFilesAtPath("./modules/", { order: 1 }).toJSON()
+    li
+      span= formatDate(tutorial.date)
+      |  &raquo;&nbsp;
       a(href=tutorial.url)= tutorial.title
-    div= formatDate(tutorial.date, 'YYYY-MM-DD')
-    if tutorial.summary
-      div= tutorial.summary
+      if tutorial.summary
+        span= ' - ' + tutorial.summary

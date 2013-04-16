@@ -3,7 +3,16 @@ layout: default
 ---
 
 article.tutorial
-  h1= document.title
+  header
+    h1= document.title
+    p
+      div
+        | Published: 
+        span.date= formatDate(document.ctime)
+      if document.ctime.getTime() < document.mtime.getTime()
+        div
+          | Modified: 
+          span.date= formatDate(document.mtime)
   .post-content!= content
 
 footer
@@ -13,6 +22,6 @@ footer
       nav.linklist
         each doc in document.relatedDocuments
           li
-            span= formatDate(doc.date, 'YYYY-MM-DD')
+            span= formatDate(doc.date)
             |  &raquo;&nbsp;
             a(href=doc.url)= doc.title

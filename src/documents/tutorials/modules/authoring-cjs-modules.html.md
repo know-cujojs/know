@@ -5,6 +5,8 @@ summary: 'CommonJS style modules are typically found on the server, including No
 tags: ['tutorial', 'modules', 'commonjs', 'curl']
 url: '/tutorials/modules/authoring-cjs-modules'
 urls: ['/tutorials/modules/authoring-cjs-modules.html.md']
+ctime: 2013-03-25
+mtime: 2013-03-26
 order: 2
 ---
 

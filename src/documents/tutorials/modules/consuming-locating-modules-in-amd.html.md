@@ -5,6 +5,8 @@ summary: ''
 tags: ['tutorial', 'modules', 'curl']
 url: '/tutorials/modules/consuming-locating-modules-in-amd'
 urls: ['/tutorials/modules/consuming-locating-modules-in-amd.html.md']
+ctime: 2013-04-11
+mtime: 2013-04-11
 order: 5
 ---
 

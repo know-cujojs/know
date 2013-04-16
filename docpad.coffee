@@ -70,8 +70,8 @@ docpadConfig =
       @site.keywords.concat(@document.keywords or []).join(', ')
 
     # Format the passed date, by default format like: Thursday, November 29 2012 3:53 PM
-    formatDate: (date,format='LLLL') ->
-      return moment(date).format(format)
+    formatDate: (date,format='YYYY-MM-DD') ->
+      return moment(date).utc().format(format)
 
   # Collections
   # ===========

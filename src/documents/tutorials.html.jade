@@ -5,9 +5,9 @@ pageOrder: 1
 ---
 
 
-each tutorial in getFiles({ url: /^\/tutorials\/[^/]+$/ }, { title: 1 }).toJSON()
-  section
-    h3
+nav.linklist
+  each tutorial in getFiles({ url: /^\/tutorials\/[^/]+$/ }, { title: 1 }).toJSON()
+    li
       a(href=tutorial.url)= tutorial.title
-    if tutorial.summary
-      div= tutorial.summary
+      if tutorial.summary
+        p= tutorial.summary

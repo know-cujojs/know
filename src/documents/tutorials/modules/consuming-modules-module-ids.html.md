@@ -5,6 +5,8 @@ summary: ''
 tags: ['tutorial', 'modules', 'curl']
 url: '/tutorials/modules/consuming-modules-module-ids'
 urls: ['/tutorials/modules/consuming-modules-module-ids.html.md']
+ctime: 2013-04-11
+mtime: 2013-04-11
 order: 4
 ---
 
