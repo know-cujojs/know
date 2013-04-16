@@ -2,7 +2,7 @@
 layout: tutorial
 title: Authoring CommonJS Modules
 summary: 'CommonJS style modules are typically found on the server, including Node.js'
-tags: ['tutorial', 'modules', 'commonjs', 'curl']
+tags: ['modules', 'commonjs', 'curl']
 url: '/tutorials/modules/authoring-cjs-modules'
 urls: ['/tutorials/modules/authoring-cjs-modules.html.md']
 ctime: 2013-03-25

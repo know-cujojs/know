@@ -2,7 +2,7 @@
 layout: 'tutorial'
 title: 'Creating Promises'
 summary: 'create promises with a promise library'
-tags: ['tutorial', 'promises', 'when']
+tags: ['promises', 'when']
 url: '/tutorials/promises/creating-promises'
 urls: ['/tutorials/promises/creating-promises.html.md']
 ctime: 2013-03-28

@@ -2,7 +2,7 @@
 layout: tutorial
 title: Consuming Promises
 summary: 'what to do when a method returns a promise'
-tags: ['tutorial', 'promises']
+tags: ['promises']
 url: '/tutorials/promises/consuming-promises'
 urls: ['/tutorials/promises/consuming-promises.html.md']
 ctime: 2013-03-25

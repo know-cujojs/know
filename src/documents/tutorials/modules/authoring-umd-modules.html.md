@@ -2,7 +2,7 @@
 layout: tutorial
 title: Authoring UMD Modules
 summary: 'UMD bridges AMD and CommonJS modules into a single, universal module format'
-tags: ['tutorial', 'modules', 'umd', 'amd', 'commonjs', 'curl']
+tags: ['modules', 'umd', 'amd', 'commonjs', 'curl']
 url: '/tutorials/modules/authoring-umd-modules'
 urls: ['/tutorials/modules/authoring-umd-modules.html.md']
 ctime: 2013-03-25

@@ -2,7 +2,7 @@
 layout: tutorial
 title: Authoring AMD Modules
 summary: 'AMD modules are typically found in browser based environments where resources are fetched over a network'
-tags: ['tutorial', 'modules', 'amd', 'curl']
+tags: ['modules', 'amd', 'curl']
 url: '/tutorials/modules/authoring-amd-modules'
 urls: ['/tutorials/modules/authoring-amd-modules.html.md']
 ctime: 2013-03-25

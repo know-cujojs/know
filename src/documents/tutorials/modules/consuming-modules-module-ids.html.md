@@ -2,7 +2,7 @@
 layout: tutorial
 title: Consuming Modules: Module Ids
 summary: ''
-tags: ['tutorial', 'modules', 'curl']
+tags: ['modules', 'curl']
 url: '/tutorials/modules/consuming-modules-module-ids'
 urls: ['/tutorials/modules/consuming-modules-module-ids.html.md']
 ctime: 2013-04-11

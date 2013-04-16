@@ -16,6 +16,13 @@ article.tutorial
   .post-content!= content
 
 footer
+  if document.tags && document.tags.length
+    section#tags
+      h3 Tags
+      nav.linkList
+        each tag in document.tags
+          li
+            a(href=getTagUrl(tag) + '.html')= tag
   if document.relatedDocuments && document.relatedDocuments.length
     section#related
       h3 Related Links
