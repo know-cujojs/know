@@ -42,7 +42,7 @@ docpadConfig =
       email: "cujojs@googlegroups.com"
 
       # Your company's name
-      copyright: "© 2013 the original author or authors"
+      copyright: "© " + moment().utc().format('YYYY') + " the original author or authors"
 
 
     # Helper Functions

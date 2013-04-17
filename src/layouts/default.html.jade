@@ -75,8 +75,18 @@ html(lang="en")
       section#content.content!= content
       hr
       footer
-        div= site.copyright
-        div(style="font-style:italic; font-size: 12px") This website was last updated at #{formatDate(site.date, 'LL')}
+        div.copyright.row-fluid
+          div.pull-right
+            a(rel='license', href='http://creativecommons.org/licenses/by/3.0/deed.en_US')
+              img(alt='Creative Commons Licens', src='//i.creativecommons.org/l/by/3.0/88x31.png')
+          div
+            div= site.copyright
+            div This work is licensed under a 
+              a(rel='license', href='http://creativecommons.org/licenses/by/3.0/deed.en_US')
+                | Creative Commons Attribution 3.0 Unported License
+              | .
+            div cujoJS projects are licensed individually, see each project's license for terms.
+        p(style="font-style:italic; font-size: 12px; margin-top: 10px;") This website was last updated at #{formatDate(site.date, 'LL')}
 
     // Scripts
     != scripts.toHTML()
