@@ -10,7 +10,7 @@
     <email><%= @site.email %></email>
   </author>
 
-  <% for document in @getFiles({ tags: { $in: 'tutorial' } }, { date: 1 }).toJSON(): %>
+  <% for document in @getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON(): %>
     <entry>
       <title><%= document.title %></title>
       <link href="<%= @site.url+'/'+document.url %>"/>

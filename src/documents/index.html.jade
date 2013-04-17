@@ -19,3 +19,14 @@ title: 'Home'
     h2 Sample Applications
     p Sample applications apply cujoJS concepts within a specific domain.
     p: a.btn(href="/samples") View Samples
+
+section
+  h2 Latest Tutorials
+  nav.linklist
+    each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 5)
+      li
+        span= formatDate(tutorial.date)
+        |  &raquo;&nbsp;
+        a(href=tutorial.url)= tutorial.title
+        if tutorial.summary
+          span= ' - ' + tutorial.summary
