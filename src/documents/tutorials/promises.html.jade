@@ -4,10 +4,12 @@ title: 'Promises Tutorials'
 ---
 
 nav.linklist
-  each tutorial in getFilesAtPath("./promises/", { order: 1 }).toJSON()
-    li
-      span= formatDate(tutorial.date)
-      |  &raquo;&nbsp;
-      a(href=tutorial.url)= tutorial.title
-      if tutorial.summary
-        span= ' - ' + tutorial.summary
+  ul
+    each tutorial in getFilesAtPath("./promises/", { order: 1 }).toJSON()
+      li
+        p
+          span= formatDate(tutorial.date)
+          |  &raquo;&nbsp;
+          a(href=tutorial.url)= tutorial.title
+          if tutorial.summary
+            span= ' - ' + tutorial.summary

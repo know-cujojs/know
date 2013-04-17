@@ -6,7 +6,8 @@ layout: page
 nav.linklist
   each data, tag in getTagCloud()
     li
-      a(href=data.url)= data.tag
-      |  (
-      = data.count
-      | )
+      p
+        a(href=data.url)= data.tag
+        |  (
+        = data.count
+        | )

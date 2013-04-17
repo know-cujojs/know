@@ -70,7 +70,7 @@ html(lang="en")
               - clazz = (document.url.indexOf(doc.url) === 0) ? 'active' : null
               li(typeof="sioc:Page", about=doc.url, class=clazz)
                 a(href=doc.url, property="dc:title")= doc.title
-          a.brand.nav.pull-right(href="http://cujojs.com/", style="padding-right: 0;") cujoJS.com
+          a.brand.nav.pull-right(href="http://cujojs.com/#get", style="padding-right: 0;") get cujoJS
     .container
       section#content.content!= content
       hr
@@ -82,11 +82,10 @@ html(lang="en")
           div
             div= site.copyright
             div This work is licensed under a 
-              a(rel='license', href='http://creativecommons.org/licenses/by/3.0/deed.en_US')
-                | Creative Commons Attribution 3.0 Unported License
+              a(rel='license', href='http://creativecommons.org/licenses/by/3.0/deed.en_US') Creative Commons Attribution 3.0 Unported License
               | .
             div cujoJS projects are licensed individually, see each project's license for terms.
-        p(style="font-style:italic; font-size: 12px; margin-top: 10px;") This website was last updated at #{formatDate(site.date, 'LL')}
+        p.last-update This website was last updated at #{formatDate(site.date, 'LL')}
 
     // Scripts
     != scripts.toHTML()

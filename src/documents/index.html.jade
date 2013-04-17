@@ -5,9 +5,12 @@ title: 'Home'
 
 // Main hero unit for a primary marketing message or call to action.
 .hero-unit
-  h1 Welcome to know cujoJS
-  p: :markdown
-    know cujoJS is your source for everything you need to learn about [cujoJS](http://cujojs.com), including getting started tutorials and sample applications.
+  h1
+    span.know know
+    | 
+    span.cujo cujo
+    span.js JS
+  p know cujoJS is your source for everything you need to learn about cujoJS, including getting started tutorials and sample applications.
 
 // Example row of columns.
 .row
@@ -23,10 +26,12 @@ title: 'Home'
 section
   h2 Latest Tutorials
   nav.linklist
-    each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 5)
-      li
-        span= formatDate(tutorial.date)
-        |  &raquo;&nbsp;
-        a(href=tutorial.url)= tutorial.title
-        if tutorial.summary
-          span= ' - ' + tutorial.summary
+    ul
+      each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 5)
+        li
+          p
+            span= formatDate(tutorial.date)
+            |  &raquo;&nbsp;
+            a(href=tutorial.url)= tutorial.title
+            if tutorial.summary
+              span= ' - ' + tutorial.summary
