@@ -5,18 +5,17 @@ layout: default
 article.tutorial
   header
     h1= document.title
-    p
-      div
-        | Published: 
-        span.date= formatDate(document.ctime)
-      if document.ctime.getTime() < document.mtime.getTime()
-        div
-          | Modified: 
-          span.date= formatDate(document.mtime)
   .post-content!= content
 
   hr
   footer
+    div.published
+      | Published: 
+      span.date= formatDate(document.ctime)
+      if document.ctime.getTime() < document.mtime.getTime()
+        br
+        | Modified: 
+        span.date= formatDate(document.mtime)
     if document.tags && document.tags.length
       section#tags
         h3 Tags
