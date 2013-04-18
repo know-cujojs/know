@@ -15,25 +15,25 @@ article.tutorial
           span.date= formatDate(document.mtime)
   .post-content!= content
 
-hr
-footer
-  if document.tags && document.tags.length
-    section#tags
-      h3 Tags
-      nav.linklist
-        ul
-          each tag in document.tags
-            li
-              p
-                a(href=getTagUrl(tag) + '.html')= tag
-  if document.relatedDocuments && document.relatedDocuments.length
-    section#related
-      h3 Related Links
-      nav.linklist
-        ul
-          each doc in document.relatedDocuments
-            li
-              p
-                span= formatDate(doc.date)
-                |  &raquo;&nbsp;
-                a(href=doc.url)= doc.title
+  hr
+  footer
+    if document.tags && document.tags.length
+      section#tags
+        h3 Tags
+        nav.linklist
+          ul
+            each tag in document.tags
+              li
+                p
+                  a(href=getTagUrl(tag) + '.html')= tag
+    if document.relatedDocuments && document.relatedDocuments.length
+      section#related
+        h3 Related Links
+        nav.linklist
+          ul
+            each doc in document.relatedDocuments
+              li
+                p
+                  span= formatDate(doc.date)
+                  |  &raquo;&nbsp;
+                  a(href=doc.url)= doc.title
