@@ -11,8 +11,6 @@ nav.linklist
     each doc in getCollection('documents').findAll({ tags: { $in: document.tag } }, { date: -1 }).toJSON()
       li
         p
-          span= formatDate(doc.date)
-          |  &raquo;&nbsp;
           a(href=doc.url)= doc.title
 
 a(href='/tags') All tags

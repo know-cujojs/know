@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Consuming Modules: Locating Modules in AMD
-summary: ''
 tags: ['modules', 'curl']
 url: '/tutorials/modules/consuming-locating-modules-in-amd'
 urls: ['/tutorials/modules/consuming-locating-modules-in-amd.html.md']

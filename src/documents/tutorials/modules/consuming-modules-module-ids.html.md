@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Consuming Modules: Module Ids
-summary: ''
 tags: ['modules', 'curl']
 url: '/tutorials/modules/consuming-modules-module-ids'
 urls: ['/tutorials/modules/consuming-modules-module-ids.html.md']
@@ -160,6 +159,4 @@ define(function (require) {
 > So, how does the AMD environment know where to find modules if I'm specifying
 ids and not urls?
 
-See the next tutorial
-[Consuming Modules: Locating Modules](./consuming-locating-modules-in-amd.html.md)
-for more information.
+That's the topic of our next lesson.

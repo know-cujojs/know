@@ -4,11 +4,18 @@ layout: page
 pageOrder: 1
 ---
 
+p Get up to speed with core cujoJS concepts quickly.
+  | Each tutorial is composed of discreet lessons that teach just what you need to know in order to be productive.
+  | You should feel free to jump in and out of lessons, but if a prerequisite concept is not you should go back and cover that material first.
 
-nav.linklist
-  ul
-    each tutorial in getFiles({ url: /^\/tutorials\/[^/]+$/ }, { title: 1 }).toJSON()
-      li
-        a(href=tutorial.url)= tutorial.title
-        if tutorial.summary
-          p= tutorial.summary
+each track in getFiles({ url: /^\/tutorials\/[^/]+$/ }, { title: 1 }).toJSON()
+  h2= track.title
+  != track.contentRenderedWithoutLayouts
+  nav.linklist
+    ol
+      each lesson in getFiles({ url: { $startsWith: track.url + '/' } }, { order: 1 }).toJSON()
+        li
+          p
+            a(href=lesson.url)= lesson.title
+            if lesson.summary
+              span= ' - ' + lesson.summary

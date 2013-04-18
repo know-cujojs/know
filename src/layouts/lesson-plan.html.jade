@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+article.lesson-plan
+  h1= document.title
+  .page-content!= content
+  nav.linklist
+    ol
+      each lesson in getFiles({ url: { $startsWith: document.url + '/' } }, { order: 1 }).toJSON()
+        li
+          p
+            a(href=lesson.url)= lesson.title
+            if lesson.summary
+              span= ' - ' + lesson.summary

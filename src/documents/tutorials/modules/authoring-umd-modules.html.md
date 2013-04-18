@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Authoring UMD Modules
-summary: 'UMD bridges AMD and CommonJS modules into a single, universal module format'
 tags: ['modules', 'umd', 'amd', 'commonjs', 'curl']
 url: '/tutorials/modules/authoring-umd-modules'
 urls: ['/tutorials/modules/authoring-umd-modules.html.md']
@@ -149,7 +148,3 @@ This time, we're injecting all three of the CommonJS scoped variables.  The envi
 Note that the factory *does not return the exports* in this variation.  It expects that you'll decorate the provided `exports` object or assign to `module.exports`.
 
 'Tis the season for wrapping!
-
-For more cujo.js tutorials, go to http://know.cujojs.com/.
-
-To get started with cujo.js asap, clone it or download it at http://github.com/cujojs/quickstart/.

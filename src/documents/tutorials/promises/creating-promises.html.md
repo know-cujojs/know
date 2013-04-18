@@ -1,7 +1,6 @@
 ---
 layout: 'tutorial'
 title: 'Creating Promises'
-summary: 'create promises with a promise library'
 tags: ['promises', 'when']
 url: '/tutorials/promises/creating-promises'
 urls: ['/tutorials/promises/creating-promises.html.md']
@@ -119,4 +118,4 @@ sayHello().then(
 ```
 
 
-In the next tutorial, we'll start to dig into higher order functions when.js provides for working with promises.
+In our next lesson, we'll start to dig into higher order functions when.js provides for working with promises.

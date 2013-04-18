@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Consuming Promises
-summary: 'what to do when a method returns a promise'
 tags: ['promises']
 url: '/tutorials/promises/consuming-promises'
 urls: ['/tutorials/promises/consuming-promises.html.md']
@@ -83,8 +82,6 @@ setTimeout(function () {
 ```
 
 From this very simple behavior, we can start to derive sophisticated systems, but let's not get ahead of ourselves.  In the next tutorial, we'll explore how to [create promises for others to consume](002-creating-promises.md).
-
-
 
 ## Aside
 

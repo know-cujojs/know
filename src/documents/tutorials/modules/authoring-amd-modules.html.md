@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Authoring AMD Modules
-summary: 'AMD modules are typically found in browser based environments where resources are fetched over a network'
 tags: ['modules', 'amd', 'curl']
 url: '/tutorials/modules/authoring-amd-modules'
 urls: ['/tutorials/modules/authoring-amd-modules.html.md']
@@ -96,7 +95,3 @@ As you can see, the `factoryFunction` parameter does not have to be a function! 
 Pretty simple, no?
 
 For further reading on AMD modules, visit https://github.com/amdjs/amdjs-api/wiki/.
-
-For more cujo.js tutorials, go to http://know.cujojs.com/.
-
-To get started with cujo.js asap, clone it or download it at http://github.com/cujojs/quickstart/.

@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Authoring CommonJS Modules
-summary: 'CommonJS style modules are typically found on the server, including Node.js'
 tags: ['modules', 'commonjs', 'curl']
 url: '/tutorials/modules/authoring-cjs-modules'
 urls: ['/tutorials/modules/authoring-cjs-modules.html.md']
@@ -99,16 +98,12 @@ var client = require('app/mime-client');
 
 ## Limitations of CommonJS Modules
 
-Many developers view CommonJS as a very clean *authoring format* for modules.  However, browsers can't consume them directly because browsers don't create the CommonJS scoped variables.  Performance also suffers dramatically when browsers must load dozens or hundreds of modules in any non-trivial application.  Therefore, developers have devised tools that generate *transport formats* to allow CommonJS modules to be concatenated and wrapped so they can operate in browsers.  Many of these tools just use AMD for the transport format since it does the job efficiently and is so widely supported.  
+Many developers view CommonJS as a very clean *authoring format* for modules.  However, browsers can't consume them directly because browsers don't create the CommonJS scoped variables.  Performance also suffers dramatically when browsers must load dozens or hundreds of modules in any non-trivial application.  Therefore, developers have devised tools that generate *transport formats* to allow CommonJS modules to be concatenated and wrapped so they can operate in browsers.  Many of these tools just use AMD for the transport format since it does the job efficiently and is so widely supported.
 
 For instance, cujo.js's cram.js will wrap CommonJS modules inside AMD modules and bundle all the modules together for efficient loading.
 
-Unfortunately, most of these tools require a build step to convert from an authoring format to a transport format.  (cujo.js's curl.js does not require a build step, in most cases.)  The build step complicates the development process and makes it harder to get started on a new project.  
+Unfortunately, most of these tools require a build step to convert from an authoring format to a transport format.  (cujo.js's curl.js does not require a build step, in most cases.)  The build step complicates the development process and makes it harder to get started on a new project.
 
-*Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for [another tutorial](./authoring-umd-modules.html.md).  
+*Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for our next lesson.
 
 For further reading on CommonJS Modules, visit http://wiki.commonjs.org/wiki/Modules/1.1/.
-
-For more cujo.js tutorials, go to http://know.cujojs.com/.
-
-To get started with cujo.js asap, clone it or download it at http://github.com/cujojs/quickstart/.

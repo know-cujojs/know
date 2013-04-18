@@ -1,7 +1,6 @@
 ---
 title: 'Higher Order Promises with when.js'
 layout: 'tutorial'
-summary: 'limitations with normal higher order functions in a promise environment, and how when.js solve these issues.'
 tags: ['promises', 'when']
 url: '/tutorials/promises/higher-order-promises-with-when'
 urls: ['/tutorials/promises/higher-order-promises-with-when.html.md']
