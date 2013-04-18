@@ -32,7 +32,7 @@
         },
         "taskgroup": {
           "version": "3.1.2",
-          "from": "taskgroup@~3.1.2",
+          "from": "taskgroup@~3.1.1",
           "dependencies": {
             "eventemitter2": {
               "version": "0.4.11",
@@ -437,7 +437,6 @@
     "docpad-plugin-partials": {
       "version": "2.6.2",
       "from": "docpad-plugin-partials@2.x",
-      "resolved": "https://registry.npmjs.org/docpad-plugin-partials/-/docpad-plugin-partials-2.6.2.tgz",
       "dependencies": {
         "taskgroup": {
           "version": "3.1.2",
@@ -565,7 +564,7 @@
             },
             "mkdirp": {
               "version": "0.3.5",
-              "from": "mkdirp@0.3.x"
+              "from": "mkdirp@~0.3.4"
             }
           }
         }
@@ -586,6 +585,62 @@
         "bal-util": {
           "version": "1.16.13",
           "from": "bal-util@~1.16.10"
+        }
+      }
+    },
+    "docpad-plugin-highlightjs": {
+      "version": "2.1.4",
+      "from": "docpad-plugin-highlightjs@2.x",
+      "dependencies": {
+        "bal-util": {
+          "version": "2.0.4",
+          "from": "bal-util@~2.0.2",
+          "dependencies": {
+            "ambi": {
+              "version": "2.0.0",
+              "from": "ambi@~2.0.0"
+            },
+            "eachr": {
+              "version": "2.0.2",
+              "from": "eachr@~2.0.2"
+            },
+            "safefs": {
+              "version": "3.0.1",
+              "from": "safefs@~3.0.1"
+            },
+            "taskgroup": {
+              "version": "3.1.2",
+              "from": "taskgroup@~3.1.1",
+              "dependencies": {
+                "eventemitter2": {
+                  "version": "0.4.11",
+                  "from": "eventemitter2@~0.4.11"
+                }
+              }
+            },
+            "typechecker": {
+              "version": "2.0.1",
+              "from": "typechecker@~2.0.1"
+            }
+          }
+        },
+        "extendr": {
+          "version": "2.0.1",
+          "from": "extendr@~2.0.1",
+          "dependencies": {
+            "typechecker": {
+              "version": "2.0.1",
+              "from": "typechecker@~2.0.1"
+            }
+          }
+        },
+        "highlight.js": {
+          "version": "7.3.0",
+          "from": "highlight.js@~7.3.0"
+        },
+        "ent": {
+          "version": "0.0.5",
+          "from": "ent@~0.0.4"
         }
       }
     },
