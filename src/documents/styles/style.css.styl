@@ -22,13 +22,25 @@ h1, h2, h3, h4, h5, h6
   font-weight 200
   letter-spacing 1px
 
-body
-  padding-top 60px
-
 table
   tfoot, tbody
     th
       border-top 1px solid #DDD
+
+.navbar .nav > li > a,
+.navbar a.brand
+  color #111
+  transition text-shadow .25s ease
+
+.navbar .nav > li > a:hover,
+.navbar a.brand:hover
+  text-shadow 0px 1px 0 #fff, 0 0 8px #ccc
+
+.navbar .nav > li > a
+  font-size 16px
+  padding-left 1em
+  padding-right 1em
+  font-weight 300
 
 footer
   padding-bottom: 30px
@@ -36,8 +48,12 @@ footer
 section footer
   padding-bottom: 0
 
+#content
+  margin-top 2em
+
 .hero-unit
   background-color #333
+  background-image url(texture.png)
   color #eee !important
   border 2px solid #666
 
