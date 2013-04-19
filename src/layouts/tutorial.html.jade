@@ -44,9 +44,8 @@ article.tutorial
     if document.tags && document.tags.length
       section#tags
         h3 Tags
-        nav.linklist
+        nav.linklist.tags
           ul
             each tag in document.tags.sort()
               li
-                p
-                  a(href=getTagUrl(tag) + '.html')= tag
+                a(href=getTagUrl(tag) + '.html')= tag
