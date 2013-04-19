@@ -7,7 +7,7 @@ article.tutorial
     h1= document.title
 
     aside.lesson-plan
-      h4 Lesson Plan
+      h4 Syllabus
       nav.linklist
         ol
           each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
@@ -30,7 +30,7 @@ article.tutorial
         | Modified: 
         span.date= formatDate(document.mtime)
 
-    h3 Lesson Plan
+    h3 Syllabus
     nav.linklist
       ol
         each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
