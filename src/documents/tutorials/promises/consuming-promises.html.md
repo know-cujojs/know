@@ -4,7 +4,7 @@ title: Consuming Promises
 tags: ['promises']
 url: '/tutorials/promises/consuming-promises'
 urls: ['/tutorials/promises/consuming-promises.html.md']
-toc: true
+toc: false
 ctime: 2013-03-25
 mtime: 2013-03-28
 order: 1
