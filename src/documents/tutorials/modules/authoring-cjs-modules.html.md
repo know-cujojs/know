@@ -4,6 +4,7 @@ title: Authoring CommonJS Modules
 tags: ['modules', 'commonjs', 'curl']
 url: '/tutorials/modules/authoring-cjs-modules'
 urls: ['/tutorials/modules/authoring-cjs-modules.html.md']
+toc: true
 ctime: 2013-03-25
 mtime: 2013-03-26
 order: 2

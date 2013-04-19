@@ -4,6 +4,7 @@ title: Consuming Modules: Locating Modules in AMD
 tags: ['modules', 'curl']
 url: '/tutorials/modules/consuming-locating-modules-in-amd'
 urls: ['/tutorials/modules/consuming-locating-modules-in-amd.html.md']
+toc: true
 ctime: 2013-04-11
 mtime: 2013-04-11
 order: 5

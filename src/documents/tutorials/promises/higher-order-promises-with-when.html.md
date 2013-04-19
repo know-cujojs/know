@@ -4,6 +4,7 @@ layout: 'tutorial'
 tags: ['promises', 'when']
 url: '/tutorials/promises/higher-order-promises-with-when'
 urls: ['/tutorials/promises/higher-order-promises-with-when.html.md']
+toc: true
 ctime: 2013-04-09
 mtime: 2013-04-09
 order: 3

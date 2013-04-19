@@ -4,6 +4,7 @@ title: 'Creating Promises'
 tags: ['promises', 'when']
 url: '/tutorials/promises/creating-promises'
 urls: ['/tutorials/promises/creating-promises.html.md']
+toc: true
 ctime: 2013-03-28
 mtime: 2013-03-28
 order: 2

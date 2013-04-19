@@ -13,10 +13,17 @@ article.tutorial
         ol
           each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
             li
-              p
-                if tutorial.url === document.url
-                  = tutorial.title
-                else
+              if tutorial.url === document.url
+                p
+                  strong= tutorial.title
+                if document.tableOfContents && document.tableOfContents.length
+                  ul
+                    each item in document.tableOfContents
+                      li
+                        p
+                          a(href='#' + item.id)= item.text
+              else
+                p
                   a(href=tutorial.url)= tutorial.title
 
   .post-content!= content
@@ -38,10 +45,14 @@ article.tutorial
         each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
           li
             p
-              if tutorial.url === document.url
-                strong= tutorial.title
-              else
-                a(href=tutorial.url)= tutorial.title
+              a(href=tutorial.url)= tutorial.title
+            if tutorial.url === document.url
+              if document.tableOfContents && document.tableOfContents.length
+                ul
+                  each item in document.tableOfContents
+                    li
+                      p
+                        a(href='#' + item.id)= item.text
 
     if document.tags && document.tags.length
       section#tags
