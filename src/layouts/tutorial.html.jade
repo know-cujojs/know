@@ -7,7 +7,8 @@ article.tutorial
     h1= document.title
 
     aside.lesson-plan
-      h4 Syllabus
+      h4= getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON().title
+        |  Outline
       nav.linklist
         ol
           each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
@@ -30,7 +31,8 @@ article.tutorial
         | Modified: 
         span.date= formatDate(document.mtime)
 
-    h3 Syllabus
+    h3= getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON().title
+      |  Outline
     nav.linklist
       ol
         each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
