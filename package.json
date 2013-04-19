@@ -42,6 +42,7 @@
 		"docpad-plugin-related": "2.x",
 		"docpad-plugin-tagging": "2.x",
 		"docpad-plugin-highlightjs": "2.x",
+		"docpad-plugin-services": "2.x",
 		"marked": "*",
 		"moment": "2.0.x"
 	},

@@ -44,6 +44,11 @@ docpadConfig =
       # Your company's name
       copyright: "© " + moment().utc().format('YYYY') + " the original author or authors"
 
+      services:
+        twitterTweetButton: 'cujojs'
+        twitterFollowButton: 'cujojs'
+        githubFollowButton: 'cujojs'
+        googleAnalytics: 'UA-40266585-1'
 
     # Helper Functions
     # ----------------

@@ -49,3 +49,9 @@ article.tutorial
             each tag in document.tags.sort()
               li
                 a(href=getTagUrl(tag) + '.html')= tag
+
+  div.social-buttons
+    != getGithubFollowButton()
+    != getTwitterFollowButton()
+    != getTwitterTweetButton()
+    != getGooglePlusOneButton()
