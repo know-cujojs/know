@@ -30,6 +30,8 @@ html(lang="en")
     meta(name="keywords", content=getPreparedKeywords())
     meta(name="author", content=site.author || '')
 
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+
     //- Output DocPad produced meta elements
     != getBlock('meta').toHTML()
 
@@ -57,12 +59,12 @@ html(lang="en")
       .navbar-inner
         .container
           a.brand(href="/") know cujoJS
-          ul.nav
+          ul.nav.hide-print
             each doc in getCollection('pages').toJSON()
               - clazz = (document.url.indexOf(doc.url) === 0) ? 'active' : null
               li(typeof="sioc:Page", about=doc.url, class=clazz)
                 a(href=doc.url, property="dc:title")= doc.title
-          a.brand.nav.pull-right(href="http://cujojs.com/#get", style="padding-right: 0;") get cujoJS
+          a.brand.nav.pull-right.hide-print(href="http://cujojs.com/#get", style="padding-right: 0;") get cujoJS
     .container
       section#content.content!= content
       hr

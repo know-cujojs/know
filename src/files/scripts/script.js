@@ -27,7 +27,7 @@
 
 		altNav = document.createElement('div');
 		altNav.appendChild(nav.cloneNode(true));
-		altNav.className = 'navbar navbar-fixed-bottom';
+		altNav.className = 'navbar navbar-alt navbar-fixed-bottom hide-print';
 		altNav.style.position = 'fixed';
 		altNav.style.marginBottom = '0';
 		altNav.style.width = '100%';

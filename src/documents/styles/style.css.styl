@@ -43,8 +43,16 @@ table
   font-weight 300
 
 body > div.container
+  padding-bottom 41px
+
+footer
+  margin-bottom: 1em
+
+section footer
+  padding-bottom: 0
+
+#content
   margin-top 2em
-  margin-bottom 70px
 
 .hero-unit
   background-color #333
@@ -80,18 +88,8 @@ footer .last-update
   margin-top 10px
 
 .social-buttons
-  position absolute
-  top 0
-  left 100%
-  margin-left 1em
   animation-duration(3s)
   animation-name(slowfadein)
-
-article.tutorial
-  position relative
-  max-width 640px
-  margin-left auto
-  margin-right auto
 
 article.tutorial .published
   float right
@@ -116,10 +114,7 @@ nav.tags ul li:last-child:after
   content ''
 
 aside.lesson-plan
-  float right
-  max-width 40%
-  margin-left 0.5em
-  margin-bottom 0.25em
+  margin-bottom 1em
   padding 0 0.5em
   background-color #f5f5f5
   border 1px solid rgba(0, 0, 0, 0.15)
@@ -149,3 +144,29 @@ pre code
   font-size 13px
   line-height 19px
   background-color inherit
+
+// media query tweaks
+
+@media print
+  .hide-print
+    display none !important
+
+@media (max-width: 979px)
+
+  .navbar-fixed-top .navbar-inner,
+  .navbar-fixed-bottom .navbar-inner
+    padding 0 20px 0 20px
+
+@media (max-width: 767px)
+
+  .navbar-alt
+    display none
+
+  body > div.container
+    padding-bottom 0
+
+  .navbar-static-top
+    width initial
+
+  .social-buttons
+    display none
