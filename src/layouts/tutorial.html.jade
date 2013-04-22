@@ -8,7 +8,7 @@ article.tutorial
     h1= document.title
 
   .row
-    .span3.pull-right.hide-print
+    .span4.pull-right.hide-print
       aside.lesson-plan
         h4= getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON().title
           |  Outline
@@ -33,7 +33,7 @@ article.tutorial
         != getTwitterFollowButton()
         != getTwitterTweetButton()
         != getGooglePlusOneButton()
-    .span9
+    .span8
       .post-content!= content
       hr
       footer
