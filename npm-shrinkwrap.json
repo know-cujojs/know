@@ -32,7 +32,7 @@
         },
         "taskgroup": {
           "version": "3.1.2",
-          "from": "taskgroup@~3.1.2",
+          "from": "taskgroup@~3.1.1",
           "dependencies": {
             "eventemitter2": {
               "version": "0.4.11",
@@ -94,7 +94,7 @@
               "dependencies": {
                 "underscore": {
                   "version": "1.4.4",
-                  "from": "underscore@1.4.4"
+                  "from": "underscore@~1.4.3"
                 },
                 "coffee-script": {
                   "version": "1.4.0",
@@ -112,7 +112,7 @@
                 },
                 "cli-color": {
                   "version": "0.2.2",
-                  "from": "cli-color@0.2.2",
+                  "from": "cli-color@~0.2.2",
                   "dependencies": {
                     "es5-ext": {
                       "version": "0.9.2",
@@ -242,7 +242,7 @@
           "dependencies": {
             "underscore": {
               "version": "1.4.4",
-              "from": "underscore@>=1.4.3"
+              "from": "underscore@~1.4.3"
             }
           }
         },
@@ -312,7 +312,7 @@
             },
             "mkdirp": {
               "version": "0.3.5",
-              "from": "mkdirp@0.3.x"
+              "from": "mkdirp@~0.3.4"
             }
           }
         },
@@ -364,7 +364,7 @@
         },
         "taskgroup": {
           "version": "3.1.2",
-          "from": "taskgroup@~3.1.2",
+          "from": "taskgroup@~3.1.1",
           "dependencies": {
             "ambi": {
               "version": "2.0.0",
@@ -504,7 +504,7 @@
       "dependencies": {
         "bal-util": {
           "version": "2.0.4",
-          "from": "bal-util@~2.0.2",
+          "from": "bal-util@~2.0.0",
           "dependencies": {
             "ambi": {
               "version": "2.0.0",
@@ -530,7 +530,7 @@
         },
         "taskgroup": {
           "version": "3.1.2",
-          "from": "taskgroup@~3.1.2",
+          "from": "taskgroup@~3.1.1",
           "dependencies": {
             "ambi": {
               "version": "2.0.0",
@@ -661,14 +661,13 @@
               "from": "htmlparser@1.x"
             },
             "request": {
-              "version": "2.19.0",
+              "version": "2.20.0",
               "from": "request@2.x",
-              "resolved": "https://registry.npmjs.org/request/-/request-2.19.0.tgz",
+              "resolved": "https://registry.npmjs.org/request/-/request-2.20.0.tgz",
               "dependencies": {
                 "form-data": {
                   "version": "0.0.8",
                   "from": "form-data@~0.0.3",
-                  "resolved": "https://registry.npmjs.org/form-data/-/form-data-0.0.8.tgz",
                   "dependencies": {
                     "combined-stream": {
                       "version": "0.0.4",
@@ -718,50 +717,41 @@
                 },
                 "cookie-jar": {
                   "version": "0.3.0",
-                  "from": "cookie-jar@~0.3.0",
-                  "resolved": "https://registry.npmjs.org/cookie-jar/-/cookie-jar-0.3.0.tgz"
+                  "from": "cookie-jar@~0.3.0"
                 },
                 "aws-sign": {
                   "version": "0.3.0",
-                  "from": "aws-sign@~0.3.0",
-                  "resolved": "https://registry.npmjs.org/aws-sign/-/aws-sign-0.3.0.tgz"
+                  "from": "aws-sign@~0.3.0"
                 },
                 "oauth-sign": {
                   "version": "0.3.0",
-                  "from": "oauth-sign@~0.3.0",
-                  "resolved": "https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.3.0.tgz"
+                  "from": "oauth-sign@~0.3.0"
                 },
                 "http-signature": {
                   "version": "0.9.11",
                   "from": "http-signature@~0.9.1",
-                  "resolved": "https://registry.npmjs.org/http-signature/-/http-signature-0.9.11.tgz",
                   "dependencies": {
                     "assert-plus": {
                       "version": "0.1.2",
-                      "from": "assert-plus@0.1.2",
-                      "resolved": "https://registry.npmjs.org/assert-plus/-/assert-plus-0.1.2.tgz"
+                      "from": "assert-plus@0.1.2"
                     },
                     "asn1": {
                       "version": "0.1.11",
-                      "from": "asn1@0.1.11",
-                      "resolved": "https://registry.npmjs.org/asn1/-/asn1-0.1.11.tgz"
+                      "from": "asn1@0.1.11"
                     },
                     "ctype": {
                       "version": "0.5.2",
-                      "from": "ctype@0.5.2",
-                      "resolved": "https://registry.npmjs.org/ctype/-/ctype-0.5.2.tgz"
+                      "from": "ctype@0.5.2"
                     }
                   }
                 },
                 "forever-agent": {
                   "version": "0.3.0",
-                  "from": "forever-agent@~0.3.0",
-                  "resolved": "https://registry.npmjs.org/forever-agent/-/forever-agent-0.3.0.tgz"
+                  "from": "forever-agent@~0.3.0"
                 },
                 "tunnel-agent": {
                   "version": "0.3.0",
-                  "from": "tunnel-agent@~0.3.0",
-                  "resolved": "https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.3.0.tgz"
+                  "from": "tunnel-agent@~0.3.0"
                 },
                 "json-stringify-safe": {
                   "version": "3.0.0",
@@ -802,6 +792,16 @@
     "moment": {
       "version": "2.0.0",
       "from": "moment@2.0.x"
+    },
+    "rest": {
+      "version": "0.9.0",
+      "from": "rest@0.9.x",
+      "dependencies": {
+        "when": {
+          "version": "2.0.1",
+          "from": "when@~2"
+        }
+      }
     },
     "docpad-plugin-livereload": {
       "version": "2.3.1",

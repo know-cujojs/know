@@ -4,6 +4,8 @@
 moment = require('moment')
 moment.lang('en')
 
+UrlBuilder = require('rest/UrlBuilder')
+
 docpadConfig =
 
   # Template Data
@@ -77,6 +79,10 @@ docpadConfig =
     # Format the passed date, by default format like: Thursday, November 29 2012 3:53 PM
     formatDate: (date,format='YYYY-MM-DD') ->
       return moment(date).utc().format(format)
+
+    # Build a URL for a template and params
+    buildUrl: (template, params) ->
+      return new UrlBuilder(template, params).build();
 
   # Collections
   # ===========

@@ -45,7 +45,8 @@
 		"docpad-plugin-services": "2.x",
 		"docpad-plugin-tableofcontents": "2.x",
 		"marked": "*",
-		"moment": "2.0.x"
+		"moment": "2.0.x",
+		"rest": "0.9.x"
 	},
 	"devDependencies": {
 		"docpad-plugin-livereload": "2.x"
