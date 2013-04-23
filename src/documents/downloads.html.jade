@@ -9,12 +9,11 @@ p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue facilis
 
 h2 A la Carte
 
-p
-  :markdown
-    The most recent release of each cujoJS library is available here.
-    You can either download an zip/tar archive of the release manually, or use a dependency management tool.
-    [npm](https://npmjs.org/) is recommended for [node.js](http://nodejs.org/) deployments.
-    [bower](http://bower.io/) is recommended for browser deployments.
+:markdown
+  The most recent release of each cujoJS library is available here.
+  You can either download an zip/tar archive of the release manually, or use a dependency management tool.
+  [npm](https://npmjs.org/) is recommended for [node.js](http://nodejs.org/) deployments.
+  [bower](http://bower.io/) is recommended for browser deployments.
 
 div.row.auto-clear
   each project, name in getFileAtPath('./_private/projects.html.jade').toJSON().projects
@@ -22,61 +21,51 @@ div.row.auto-clear
       - var version = Object.keys(project.releases)[0]
       - var release = project.releases[version]
     else if project.latest
-      - var version = 'Latest'
+      - var version = ''
       - var release = project.latest
-    div.span4
+    div.span4.project(class='project-'+name)
       h3
         a(href=buildUrl('https://github.com/{org}/{project}', { org: project.org, project: name }), target='_blank')
           i.icon-cujojs(class='icon-' + name, style='color: #969ba2')
           | 
           = name
           | .js
-      p= project.tagline
-      div.btn-group.pull-right
+        | 
+        = version
+      div.btn-group
+        .btn(class=project.npm ? '' : 'disabled', data-toggle='.project-'+name+' .install-npm') npm
+        .btn(class=project.bower ? '' : 'disabled', data-toggle='.project-'+name+' .install-bower') bower
         a.btn(href=buildUrl('https://github.com/{org}/{project}/tarball/{refspec}', { org: project.org, project: name, refspec: release.refspec }), target='_blank')
-          i.icon-download
-          |  Tar
+          | Tar
         a.btn(href=buildUrl('https://github.com/{org}/{project}/zipball/{refspec}', { org: project.org, project: name, refspec: release.refspec }), target='_blank')
-          i.icon-download
-          |  Zip
-      h4= version
+          | Zip
+      p= project.tagline
       if project.npm
-        h5 via npm
-        if version !== 'Latest'
-          p In project root:
-            br
+        .install-npm
+          h4 via npm
+          if version
             code npm install --save 
               = project.npm
               | @~
               = version
-          p In package.json:
-            br
-            code "
-              = project.npm
-              | ": "~
-              = version
-              | "
-        else
-          p In project root:
-            br
+          else
             code npm install --save 
               = project.npm
               | @
               = buildUrl('https://github.com/{org}/{project}/tarball/{refspec}', { org: project.org, project: name, refspec: release.refspec })
       if project.bower
-        h5 via bower
-        p In components.json:
-            br
-            if version !== 'Latest'
-              code "
-                = project.bower
-                | ": "~
-                = version
-                | "
-            else
-              code "
-                = project.bower
-                | ": ""
+        .install-bower
+          h4 via bower
+          if version
+            code "
+              = project.bower
+              | ": "~
+              = version
+              | "
+          else
+            code "
+              = project.bower
+              | ": ""
 
 h2 Add-ons
 p Proin egestas vestibulum felis vel euismod. Nulla malesuada ante quis nunc dapibus hendrerit at a ipsum. Fusce eget nulla augue, id tincidunt dui. Morbi elementum dolor vel odio scelerisque dapibus placerat velit commodo. Etiam nec egestas felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat vulputate dolor, at suscipit risus congue vitae. Maecenas velit orci, dictum ac fermentum in, imperdiet tincidunt ipsum. Sed vulputate risus in ante mattis sollicitudin quis non lacus. Mauris tempor dignissim ligula, in consequat purus fermentum nec. Duis rhoncus magna vitae mauris lacinia laoreet. In hac habitasse platea dictumst. Proin id metus id purus mollis hendrerit a vel ante. Curabitur aliquet tincidunt mattis. Sed lobortis pulvinar felis sit amet posuere.

@@ -38,4 +38,22 @@
 
 	});
 
+	(function () {
+
+		function toggleDisplay(btn) {
+			var ele = document.querySelector(btn.getAttribute('data-toggle'));
+			if (!ele) { return; }
+			ele.style.display = ele.style.display === 'none' ? 'block' : 'none';
+		}
+
+		var i, btns = document.querySelectorAll('[data-toggle]');
+		for (i=0; i<btns.length; i++) {
+			toggleDisplay(btns[i]);
+			btns[i].addEventListener('click', function (e) {
+				toggleDisplay(e.target);
+			});
+		}
+
+	}());
+
 }(window, document));
