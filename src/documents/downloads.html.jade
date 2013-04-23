@@ -1,0 +1,72 @@
+---
+title: Downloads
+layout: page
+pageOrder: 4
+---
+
+h2 cujoJS Core
+
+h2 A la Carte
+div.row
+  each project, name in getFileAtPath('./_private/projects.html.jade').toJSON().projects
+    if project.releases && Object.keys(project.releases).length
+      - var version = Object.keys(project.releases)[0]
+      - var release = project.releases[version]
+    else if project.latest
+      - var version = 'Latest'
+      - var release = project.latest
+    div.span4.clearfix
+      h3
+        a(href=buildUrl('https://github.com/{org}/{project}', { org: project.org, project: name }), target='_blank')
+          i.icon-cujojs(class='icon-' + name, style='color: #969ba2')
+          | 
+          = name
+          | .js
+      p= project.tagline
+      div.btn-group.pull-right
+        a.btn(href=buildUrl('https://github.com/{org}/{project}/tarball/{refspec}', { org: project.org, project: name, refspec: release.refspec }), target='_blank')
+          i.icon-download
+          |  Tar
+        a.btn(href=buildUrl('https://github.com/{org}/{project}/zipball/{refspec}', { org: project.org, project: name, refspec: release.refspec }), target='_blank')
+          i.icon-download
+          |  Zip
+      h4= version
+      if project.npm
+        h5 via npm
+        if version !== 'Latest'
+          p In project root:
+            br
+            code npm install --save 
+              = project.npm
+              | @~
+              = version
+          p In package.json:
+            br
+            code "
+              = project.npm
+              | ": "~
+              = version
+              | "
+        else
+          p In project root:
+            br
+            code npm install --save 
+              = project.npm
+              | @
+              = buildUrl('https://github.com/{org}/{project}/tarball/{refspec}', { org: project.org, project: name, refspec: release.refspec })
+      if project.bower
+        h5 via bower
+        p In components.json:
+            br
+            if version !== 'Latest'
+              code "
+                = project.bower
+                | ": "~
+                = version
+                | "
+            else
+              code "
+                = project.bower
+                | ": ""
+
+h2 Add-ons
