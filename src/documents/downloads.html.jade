@@ -5,9 +5,18 @@ pageOrder: 4
 ---
 
 h2 cujoJS Core
+p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue facilisis tortor a mollis. Nunc dapibus neque condimentum est viverra volutpat. Cras ligula tellus, lobortis cursus vestibulum nec, dictum vitae mauris. Nam ultricies felis non quam consectetur suscipit. Nam facilisis mollis vehicula. Maecenas elit turpis, ornare eu eleifend quis, interdum eu lacus. Sed et justo nibh, sed varius sem. Vivamus quis justo et est molestie consequat. Cras dignissim vulputate mauris, eget aliquam dui suscipit elementum. Duis volutpat sollicitudin ipsum, sagittis blandit justo tincidunt vitae. Aenean sed massa nec eros malesuada viverra. Quisque ac mi vulputate nisl pharetra pulvinar eget in est. Vestibulum placerat egestas risus, congue commodo felis iaculis at. Praesent elementum condimentum sem eu dapibus.
 
 h2 A la Carte
-div.row
+
+p
+  :markdown
+    The most recent release of each cujoJS library is available here.
+    You can either download an zip/tar archive of the release manually, or use a dependency management tool.
+    [npm](https://npmjs.org/) is recommended for [node.js](http://nodejs.org/) deployments.
+    [bower](http://bower.io/) is recommended for browser deployments.
+
+div.row.auto-clear
   each project, name in getFileAtPath('./_private/projects.html.jade').toJSON().projects
     if project.releases && Object.keys(project.releases).length
       - var version = Object.keys(project.releases)[0]
@@ -15,7 +24,7 @@ div.row
     else if project.latest
       - var version = 'Latest'
       - var release = project.latest
-    div.span4.clearfix
+    div.span4
       h3
         a(href=buildUrl('https://github.com/{org}/{project}', { org: project.org, project: name }), target='_blank')
           i.icon-cujojs(class='icon-' + name, style='color: #969ba2')
@@ -70,3 +79,4 @@ div.row
                 | ": ""
 
 h2 Add-ons
+p Proin egestas vestibulum felis vel euismod. Nulla malesuada ante quis nunc dapibus hendrerit at a ipsum. Fusce eget nulla augue, id tincidunt dui. Morbi elementum dolor vel odio scelerisque dapibus placerat velit commodo. Etiam nec egestas felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat vulputate dolor, at suscipit risus congue vitae. Maecenas velit orci, dictum ac fermentum in, imperdiet tincidunt ipsum. Sed vulputate risus in ante mattis sollicitudin quis non lacus. Mauris tempor dignissim ligula, in consequat purus fermentum nec. Duis rhoncus magna vitae mauris lacinia laoreet. In hac habitasse platea dictumst. Proin id metus id purus mollis hendrerit a vel ante. Curabitur aliquet tincidunt mattis. Sed lobortis pulvinar felis sit amet posuere.
