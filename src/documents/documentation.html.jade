@@ -11,13 +11,15 @@ nav.linklist(style='font-family: Monaco, Menlo, Consolas, "Courier New", monospa
     each project, name in getFileAtPath('./_private/projects.html.jade').toJSON().projects
       li
         i(class='icon-' + name)
+        | 
         strong= name
         | : 
         nav.linklist.tags(style='display: inline;')
           ul
             if project.latest
               li
-                a(href=buildUrl(project.latest.docs || project.docs, { refspec: project.latest.refspec }), target='_blank') latest
+                a(href=buildUrl(project.latest.docs || project.docs, { refspec: project.latest.refspec }), target='_blank')
+                  =  project.latest.label || 'bleeding edge'
             if project.releases
               each release, version in project.releases
                 li
