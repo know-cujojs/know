@@ -14,9 +14,9 @@ Asynchronous Module Definition (AMD) is the most widely supported JavaScript mod
 
 Authoring AMD modules is super easy.  There are just three things to remember:
 
-1. wrap your code in a `define()`
-2. list your dependencies
-3. return something!
+1. Wrap your code in a `define()`.
+2. List your dependencies.
+3. Return something!
 
 ## define()
 
