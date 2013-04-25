@@ -10,7 +10,7 @@ mtime: 2013-03-25
 order: 1
 ---
 
-AMD (Asynchronous Module Definition) is the most widely supported JavaScript module format.  It's used by cujo.js, jQuery, dojo, Mootools, and several dozen other libraries and frameworks.  AMD was designed to be a format that is optimal in any browser environment, but can be used in non-browser environments, as well.  
+Asynchronous Module Definition (AMD) is the most widely supported JavaScript module format.  It's used by cujo.js, jQuery, dojo, Mootools, and several dozen other libraries and frameworks.  AMD was designed to be a format that is optimal in any browser environment, but can be used in non-browser environments, as well.  
 
 Authoring AMD modules is super easy.  There are just three things to remember:
 
