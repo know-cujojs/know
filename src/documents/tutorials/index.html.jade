@@ -5,8 +5,8 @@ pageOrder: 1
 ---
 
 p Get up to speed with core cujoJS concepts quickly.
-  | Each tutorial is composed of discrete lessons that teach just what you need to know in order to be productive.
-  | You should feel free to jump in and out of lessons, but if a prerequisite concept is not you should go back and cover that material first.
+  | Each tutorial consists of discrete lessons that teach just what you need to know in order to be productive.
+  | Feel free to jump in and out of lessons, but if a prerequisite concept is not you should go back and cover that material first.
 
 each track in getFiles({ url: /^\/tutorials\/[^/]+$/ }, { title: 1 }).toJSON()
   h2= track.title
