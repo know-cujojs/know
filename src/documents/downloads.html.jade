@@ -5,7 +5,14 @@ pageOrder: 4
 ---
 
 h2 cujoJS Core
-p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue facilisis tortor a mollis. Nunc dapibus neque condimentum est viverra volutpat. Cras ligula tellus, lobortis cursus vestibulum nec, dictum vitae mauris. Nam ultricies felis non quam consectetur suscipit. Nam facilisis mollis vehicula. Maecenas elit turpis, ornare eu eleifend quis, interdum eu lacus. Sed et justo nibh, sed varius sem. Vivamus quis justo et est molestie consequat. Cras dignissim vulputate mauris, eget aliquam dui suscipit elementum. Duis volutpat sollicitudin ipsum, sagittis blandit justo tincidunt vitae. Aenean sed massa nec eros malesuada viverra. Quisque ac mi vulputate nisl pharetra pulvinar eget in est. Vestibulum placerat egestas risus, congue commodo felis iaculis at. Praesent elementum condimentum sem eu dapibus.
+
+:markdown
+  Starting a new project?
+  Get going quickly with cujoJS [seed](https://github.com/cujojs/seed).
+
+  seed provides a starter kit you can clone and start using immediatly.  No additional boilerplate required.
+
+a.btn.btn-primary(href='https://github.com/cujojs/seed#readme') Get started with seed
 
 h2 A la Carte
 
@@ -36,9 +43,9 @@ div.row.auto-clear
         .btn(class=project.npm ? '' : 'disabled', data-toggle='.project-'+name+' .install-npm') npm
         .btn(class=project.bower ? '' : 'disabled', data-toggle='.project-'+name+' .install-bower') bower
         a.btn(href=buildUrl('https://github.com/{org}/{project}/tarball/{refspec}', { org: project.org, project: name, refspec: release.refspec }), target='_blank')
-          | Tar
+          | .tgz
         a.btn(href=buildUrl('https://github.com/{org}/{project}/zipball/{refspec}', { org: project.org, project: name, refspec: release.refspec }), target='_blank')
-          | Zip
+          | .zip
       p= project.tagline
       if project.npm
         .install-npm
