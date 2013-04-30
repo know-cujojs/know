@@ -41,9 +41,18 @@
 	(function () {
 
 		function toggleDisplay(btn) {
-			var ele = document.querySelector(btn.getAttribute('data-toggle'));
+			var ele = document.querySelector(btn.getAttribute('data-toggle')),
+			    next = btn.getAttribute('data-toggle-next');
 			if (!ele) { return; }
-			ele.style.display = ele.style.display === 'none' ? 'block' : 'none';
+			btn.setAttribute('data-toggle-next', ele.style.display);
+			if (next == undefined || next === 'none') {
+				ele.style.display = 'none';
+				btn.className = 'btn';
+			}
+			else {
+				ele.style.display = next;
+				btn.className = 'btn active';
+			}
 		}
 
 		var i, btns = document.querySelectorAll('[data-toggle]');
