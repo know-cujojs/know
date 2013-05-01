@@ -64,7 +64,6 @@ html(lang="en")
               - clazz = (document.url.indexOf(doc.url) === 0) ? 'active' : null
               li(typeof="sioc:Page", about=doc.url, class=clazz)
                 a(href=doc.url, property="dc:title")= doc.title
-          a.brand.nav.pull-right.hide-print(href="http://cujojs.com/#get", style="padding-right: 0;") get cujoJS
     .container
       section#content.content!= content
       hr
