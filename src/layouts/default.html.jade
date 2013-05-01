@@ -64,6 +64,15 @@ html(lang="en")
               - clazz = (document.url.indexOf(doc.url) === 0) ? 'active' : null
               li(typeof="sioc:Page", about=doc.url, class=clazz)
                 a(href=doc.url, property="dc:title")= doc.title
+          ul.nav.social.pull-right.hide-print
+            li
+              a(href='https://twitter.com/cujojs', title='Follow us on Twitter')
+                i.icon-twitter
+                | Twitter
+            li
+              a(href='https://github.com/cujojs', title='Follow us on Github')
+                i.icon-github
+                | GitHub
     .container
       section#content.content!= content
       hr

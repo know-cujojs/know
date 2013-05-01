@@ -1,4 +1,5 @@
 @import "fontcustom.css"
+@import "EntypoSocial.css"
 
 .icon-cujojs
   line-height inherit
@@ -30,7 +31,6 @@ p
 h1, h2, h3, h4, h5, h6
   color #222
   font-weight 200
-  letter-spacing 1px
   margin-top 1em
 
 table
@@ -52,6 +52,18 @@ table
   padding-left 1em
   padding-right 1em
   font-weight 300
+
+.navbar .nav.social li a
+  padding-left 0.5em
+  padding-right 0.5em
+
+.navbar .nav.social li:last-child a
+  padding-right 0
+
+.navbar .nav.pull-right li .icon-twitter,
+.navbar .nav.pull-right li .icon-github {
+  color #555
+}
 
 body > div.container
   padding-bottom 41px
@@ -75,10 +87,11 @@ section footer
   font-size 6em
   font-weight bold
   margin-top 0
+  letter-spacing -2px
 
 .hero-unit .cujo
   color #eee
-  text-shadow #06f 0 0 20px
+  text-shadow #06f 0 0 0.25em
 
 .hero-unit .js
   color #666
