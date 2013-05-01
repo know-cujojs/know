@@ -3,35 +3,40 @@ layout: 'default'
 title: 'Home'
 ---
 
-// Main hero unit for a primary marketing message or call to action.
 .hero-unit
   h1
     span.know know
     | 
     span.cujo cujo
     span.js JS
-  p know cujoJS is your source for everything you need to learn about cujoJS, including getting started tutorials and sample applications.
+  p know cujoJS is your source for everything you may want to learn about cujoJS, including getting started tutorials and sample applications.
 
-// Example row of columns.
 .row
   .span6
     h2 Tutorials
     p Our tutorials walk you through everything you need to know.  Starting with the fundamentals, you'll be a cujoJS expert in no time.
     p: a.btn(href="/tutorials") View Tutorials
+
+    h3 Latest Tutorials
+    nav.linklist
+      ul
+        each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 7)
+          li
+            p
+              span= formatDate(tutorial.date)
+              |  &raquo;&nbsp;
+              a(href=tutorial.url)= tutorial.title
+              if tutorial.summary
+                span= ' - ' + tutorial.summary
   .span6
+    h2 Get cujoJS
+    p Download the latest versions of each library.
+    p: a.btn(href="/downloads") Get cujoJS
+
+    h2 Reference Documentation
+    p Complete reference documentation for each cujoJS library.
+    p: a.btn(href="/documentation") View Reference Docs
+
     h2 Sample Applications
     p Sample applications apply cujoJS concepts within a specific domain.
     p: a.btn(href="/samples") View Samples
-
-section
-  h2 Latest Tutorials
-  nav.linklist
-    ul
-      each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 5)
-        li
-          p
-            span= formatDate(tutorial.date)
-            |  &raquo;&nbsp;
-            a(href=tutorial.url)= tutorial.title
-            if tutorial.summary
-              span= ' - ' + tutorial.summary
