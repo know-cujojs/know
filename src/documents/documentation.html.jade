@@ -10,7 +10,7 @@ nav.linklist(style='font-family: Monaco, Menlo, Consolas, "Courier New", monospa
   ol.unstyled
     each project, name in getFileAtPath('./_private/projects.html.jade').toJSON().projects
       li
-        i(class='icon-' + name)
+        i.icon-cujojs(class='icon-' + name)
         | 
         strong= name
         | : 
