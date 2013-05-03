@@ -9,7 +9,7 @@ title: 'Home'
     | 
     span.cujo cujo
     span.js JS
-  p know cujoJS is your source for everything you may want to learn about cujoJS, including getting started tutorials and sample applications.
+  p Your source for everything you may want to learn about cujoJS, including getting started tutorials and sample applications.
 
 .row
   .span6
@@ -17,7 +17,7 @@ title: 'Home'
     p Our tutorials walk you through everything you need to know.  Starting with the fundamentals, you'll be a cujoJS expert in no time.
     p: a.btn(href="/tutorials") View Tutorials
 
-    h3 Latest Tutorials
+    h3 Latest tutorials
     nav.linklist
       ul
         each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 15)
@@ -33,15 +33,15 @@ title: 'Home'
     p Download the latest versions of each library.
     p: a.btn(href="/downloads") Get cujoJS
 
-    h2 Reference Documentation
+    h2 Reference documentation
     p Complete reference documentation for each cujoJS library.
     p: a.btn(href="/documentation") View Reference Docs
 
-    h2 Sample Applications
+    h2 Sample applications
     p Sample applications apply cujoJS concepts within a specific domain.
     p: a.btn(href="/samples") View Samples
 
-    h2 Need Assistance?
+    h2 Need assistance?
     :markdown
       Join cujoJS's [mailing list](https://groups.google.com/d/forum/cujojs) where you can find solutions, get the latest news, or share successes.
       If you prefer live discussion, join the [#cujojs room on freenode](irc://irc.freenode.net:6697/#cujojs).

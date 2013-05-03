@@ -11,7 +11,7 @@ article.tutorial
     .span4.pull-right.hide-print
       aside.lesson-plan
         h4= getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON().title
-          |  Outline
+          |  outline
         nav.linklist
           ol
             each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
@@ -43,7 +43,7 @@ article.tutorial
             | Modified: 
             span.date= formatDate(document.mtime)
         h3= getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON().title
-          |  Outline
+          |  outline
         nav.linklist
           ol
             each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
