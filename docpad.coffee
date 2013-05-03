@@ -50,7 +50,7 @@ docpadConfig =
         twitterTweetButton: 'cujojs'
         twitterFollowButton: 'cujojs'
         githubFollowButton: 'cujojs'
-        googleAnalytics: 'UA-40266585-1'
+        googleAnalytics: 'UA-40625363-2'
 
     # Helper Functions
     # ----------------
