@@ -20,7 +20,7 @@ title: 'Home'
     h3 Latest Tutorials
     nav.linklist
       ul
-        each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 7)
+        each tutorial in getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON().slice(0, 15)
           li
             p
               span= formatDate(tutorial.date)

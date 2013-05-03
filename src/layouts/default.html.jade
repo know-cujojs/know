@@ -58,8 +58,12 @@ html(lang="en")
     .navbar.navbar-static-top
       .navbar-inner
         .container
-          a.brand(href="/") know cujoJS
+          a.brand(href="http://cujojs.com/") cujoJS
           ul.nav.hide-print
+            - doc = getFileAtPath('/').toJSON()
+            - clazz = (document.url === doc.url) ? 'active' : null
+            li(typeof="sioc:Page", about=doc.url, class=clazz)
+              a(href=doc.url, property="dc:title")= doc.title
             each doc in getCollection('pages').toJSON()
               - clazz = (document.url.indexOf(doc.url) === 0) ? 'active' : null
               li(typeof="sioc:Page", about=doc.url, class=clazz)
