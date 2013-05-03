@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Authoring AMD Modules
+title: Authoring AMD modules
 tags: ['modules', 'amd', 'curl']
 url: '/tutorials/modules/authoring-amd-modules'
 urls: ['/tutorials/modules/authoring-amd-modules.html.md']
@@ -10,13 +10,13 @@ mtime: 2013-03-25
 order: 1
 ---
 
-Asynchronous Module Definition (AMD) is the most widely supported JavaScript module format.  It's used by cujo.js, jQuery, dojo, Mootools, and dozens of other libraries and frameworks.  AMD is optimal in any browser environment, but you can also use it in non-browser environments.  
+Asynchronous Module Definition (AMD) is the most widely supported JavaScript module format.  It's used by cujo.js, jQuery, dojo, Mootools, and dozens of other libraries and frameworks.  AMD is designed for browser environments, but you can also use it in non-browser environments.  
 
-Authoring AMD modules is super easy.  There are just three things to remember:
+Authoring AMD modules has three main steps:
 
 1. Wrap your code in a `define()`.
 2. List your dependencies.
-3. Return (or export) something!
+3. Return something!
 
 ## define()
 
@@ -26,7 +26,7 @@ The `define` function announces to the AMD environment that you want to declare 
 
 As you can see from the first parameter, `dependencyIds`, you can pass an array of ids into `define`.  These are the ids of other modules that your module requires to do its work.  The second parameter, `factoryFunction`, creates your module and will be run *exactly once*.  The factory is called with the dependent modules as parameters.  Furthermore, it is guaranteed to run only after all of the dependencies are known to be available.  In practice, the factory typically runs just before it is needed.
 
-Here's a very short example.  
+Here's a simple example.  
 
 ```js
 // module app/mime-client
@@ -41,11 +41,11 @@ define(['rest', 'rest/interceptor/mime'], function (rest, mime) {
 
 Our module, "app/mime-client", relies on two other modules, "rest" and "rest/interceptor/mime".  The two dependent modules are mapped onto the factory's parameter list as `rest` and `mime`.  You may name these however you wish, of course.  
 
-Note that slashes in a module id do not indicate it is an URL.  AMD ids use slashes for *namespacing*.  In this example, the app/mime-client module depends on a module in the "rest/interceptor" namespace.  (You're getting a sneak preview of AMD "packages" here.  We'll cover those in more detail in another tutorial.)  
+Note that slashes in a module id do not indicate it is an url.  AMD ids use slashes to indicate a *namespace*.  In this example, the app/mime-client module depends on a module in the "rest/interceptor" namespace.  (You're getting a sneak preview of AMD "packages" here.  We'll cover those in more detail in another tutorial.)  
 
 Inside the factory, we create the "app/mime-client" module *and return it*.  In this case, our module is a function since [rest.js](//github.com/cujojs/rest) is a suite of composable REST functions.  However, you can create modules that are *any valid Javascript type*.
 
-## AMD-Wrapped CommonJS
+## AMD-wrapped CommonJS
 
 AMD supports another `define` signature that helps bridge the gap between AMD and [CommonJS](./authoring-cjs-modules.html.md).  If your factory function accepts parameters, but you omit the dependency array, the AMD environment assumes you wish to emulate a CommonJS module environment.  The standard `require`, `exports`, and `module` variables are injected as parameters to the factory.  This variation is known as AMD-wrapped CommonJS.
 
@@ -69,7 +69,7 @@ Notice that the factory receives *up to* three arguments that emulate the Common
 
 The second way is to set properties on the `exports` object.  There are use cases for each export mechanism, but that's a great topic for an upcoming tutorial.  
 
-## Other Variations
+## Other variations
 
 There are many other variations of `define` parameters and even variations of the AMD-wrapped CommonJS format -- too many to cover in a simple tutorial.  However, as you're browsing other cujo.js tutorials, there's one more variation you'll see a lot.  We recommend the following variation when declaring [wire.js](//github.com/cujojs/wire) "spec" modules.  
 
@@ -93,6 +93,5 @@ define({
 
 As you can see, the `factoryFunction` parameter does not have to be a function!  In the case above, the module is defined as an object literal.  The AMD environment detects non-functions in the last position and automatically wraps them in a factory function.    Also, because this module does not have explicit dependencies, we can skip the dependency array, too.  
 
-Pretty simple, no?
 
 For further reading on AMD modules, visit https://github.com/amdjs/amdjs-api/wiki/.

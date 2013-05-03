@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Consuming Modules: Module Ids
+title: Consuming modules: Module ids
 tags: ['modules', 'curl']
 url: '/tutorials/modules/consuming-modules-module-ids'
 urls: ['/tutorials/modules/consuming-modules-module-ids.html.md']
@@ -10,28 +10,28 @@ mtime: 2013-04-11
 order: 4
 ---
 
-As we discussed briefly in
+As mentioned in
 [Authoring AMD Modules](./authoring-amd-modules.html.md), some modules require
 other modules to do their work.  The module author specifies these other
 modules by listing each module's *id* in the dependency list or in a
 "local require".
 
-## Module Ids
+## Module ids
 
 AMD and CommonJS both specify module ids that look very much like file paths or
 urls: ids consist of *terms* separated by slashes.  The definition of "terms"
 is fairly loose.  The CommonJS
-[spec](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Identifiers) further
+[specification](http://wiki.commonjs.org/wiki/Modules/1.1#Module_Identifiers) further
 restricts "terms" to be camelCase Javascript identifiers, but in practice,
-other popular file name characters, such as `-` are perfectly acceptable.  The
+other popular file name characters, such as `-` are acceptable.  The
 proposed ES6 modules
-[spec](http://wiki.ecmascript.org/doku.php?id=harmony:modules) is much more
+[specification](http://wiki.ecmascript.org/doku.php?id=harmony:modules) is more
 flexible, but, realistically, ids should be compatible with file systems
 and urls.
 
 AMD reserves the `!` character to indicate that a
 [Loader Plugin](https://github.com/amdjs/amdjs-api/wiki/Loader-Plugins) should
-be used to load the module (or other type of resource).
+be used to load the module or other type of resource.
 
 Some examples of acceptable module ids:
 
@@ -44,14 +44,14 @@ Some examples of acceptable module ids:
 
 As with file systems and urls, the slashes delineate organizational
 hierarchies.  Typically, these hierarchies are mirrored by identical
-directory structures in the underlying file system, but this isn't guaranteed.
+directory structures in the underlying file system, but this mirroring is not guaranteed.
 For example, curl.js exposes some extensibility API modules.  These modules
-have ids of the form "curl/<submodule>", but they don't actually exist as
+have ids of the form "curl/<submodule>", but they do not actually exist as
 files.
 
-Be careful to capitalize correctly.  Since most modules typically map
-to files, the module name should be spelled and capitalized exactly the
-same as the file name.  For instance, "jQuery" is almost always *not*
+Be careful to capitalize correctly.  Because most modules typically map
+to files, spell and capitalize the module name exactly the
+same as the file name.  For example, "jQuery" is almost always *not*
 the correct module id (capital "Q")!  Here's how you would require jQuery
 in a module:
 
@@ -64,14 +64,14 @@ define(function (require) {
 });
 ```
 
-## Reserved Ids
+## Reserved ids
 
 Most AMD environments reserve a few special module ids to refer to built-in
-modules and utilities.  For instance, most AMD environments reserve the
+modules and utilities.  For example, most AMD environments reserve the
 "require", "exports", and "module" ids to gain access to pseudo-modules that
 simulate the *free variables* of CommonJS.  AMD environments may reserve
-a few other ids, as well.  For instance, one of the proposed features of
-curl.js 0.8 is a "global" pseudo-module to help devs create code that works
+a few other ids, as well.  For example, a proposed feature of
+curl.js 0.8 is a global pseudo-module to help developers create code that works
 on the server and the browser.
 
 ```js
@@ -95,11 +95,11 @@ Modules that reside in the same hierarchical level can be referenced by using
 from the current level can be referenced using `../`.
 
 At run time or build time, the AMD environment must translate relative ids
-to *absolute* ids.  Absolute ids are "rooted" at the top level of the module
+to *absolute* ids.  Absolute ids are rooted at the top level of the module
 hierarchy and contain no `..` or `.`.  The process of removing the leading
 `..` or `.` is called "normalization".  For example, assuming
-"app/billing/billTo/Customer" is the id of our current module, the environment
-will normalize required ids as follows:
+app/billing/billTo/Customer is the id of the current module, the environment
+normalizes required ids as follows:
 
 ```js
 // module app/billing/billTo/Customer
@@ -117,10 +117,8 @@ define(function (require) {
 AMD and CommonJS also recognize bare `.` and `..` as module identifiers.  `.`
 normalizes to the module whose name is the same as the current level. `..`
 normalizes to the module whose name is the same as the level that is one
-level up from the current level.  Yes, that is confusing!  Perhaps that's
-why you don't see these used often.  Hopefully, some examples might help.
-Given that the current module is "app/billing/billTo/Customer", the
-environment will normalize these ids as follows:
+level up from the current level.  For example, given that the current module is app/billing/billTo/Customer, the
+environment normalizes these ids as follows:
 
 ```js
 // module app/billing/billTo/Customer
@@ -135,10 +133,10 @@ define(function (require) {
 });
 ```
 
-_Hint:_ never use relative module ids to reference unrelated modules!  Relative
+_Hint:_ Never use relative module ids to reference unrelated modules!  Relative
 modules are meant to be used *within* a "package" (defined later).  Also,
-more than one set of `../` may be a code smell that you need to better organize
-your modules.  The relative id may also be interpreted as a url, rather than
+more than one set of `../` may indicate that you need to organize
+your modules better.  The relative id may also be interpreted as a url, rather than
 an id by an AMD environment.
 
 ```js
@@ -157,7 +155,7 @@ define(function (require) {
 });
 ```
 
-> So, how does the AMD environment know where to find modules if I'm specifying
+You may well wonder, how does the AMD environment know where to find modules you specify
 ids and not urls?
 
-That's the topic of our next lesson.
+That's the topic of [Consuming modules: locating modules in AMD](./consuming-locating-modules-in-amd.html.md).
