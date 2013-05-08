@@ -10,7 +10,7 @@ mtime: 2013-04-09
 order: 3
 ---
 
-One of JavaScript's great strengths is the ability to fuse object-oriented and functional programming styles.  Higher order functions are a concept in functional programming whereby you apply a simple function to a larger collection of data to produce a new, transformed collection.  Put simply, higher- order functions are methods that accept functions as arguments.
+A great strength of JavaScript is the ability to fuse object-oriented and functional programming styles.Higher-order functions are a concept in functional programming whereby you apply a simple function to a larger collection of data to produce a new, transformed collection.  Put simply, higher-order functions are methods that accept functions as arguments.
 
 Previous tutorials demonstrated [how to consume promises](./consuming-promises.html.md) and [how to create promises](./creating-promises.html.md). This tutorial examines limitations of normal higher- order functions in a promise environment, and how [when.js](https://github.com/cujojs/when) resolves these issues.
 
@@ -38,7 +38,7 @@ var datax2 = data.map(function double(value) {
 console.log(datax2);  // [0, 2, NaN, 6]
 ```
 
-What happened to the third value, why is it NaN instead of 4?  Unfortunately, JavaScript arrays don't understand promises.  Instead of providing the value of the promise, 2, to be doubled, the promise object itself is doubled.  An object times a number is not a number (NaN).  Fortunately, when.js provides a map implementation that is promise-aware.
+What happened to the third value, why is it NaN instead of 4?  Unfortunately, JavaScript arrays don't understand promises.  Instead of providing the value of the promise, 2, to be doubled, the promise object itself is doubled.  An object times a number is not a number (NaN).  Fortunately, `when.js` provides a map implementation that is promise-aware.
 
 ```javascript
 var data = [0, 1, when(2), 3];
@@ -52,13 +52,13 @@ when.map(data, double).then(function (datax2) {
 });
 ```
 
-Using the same data array, and the same doubling function, this time instead of NaN you get the expected double value for 2, 4!
+Using the same data array and the same doubling function, this time instead of NaN you get 4, the expected double value for 2.
 
-It's important to remember that a promise's value may not be immediately available. Nor is the resulting array from the map method immediately available; a promise for the resulting array is returned instead. The work function may return a promise, when will wait for that promise to resolve before resolving the promise returned from `when.map()`.
+Remember that a promise's value may not be immediately available. Nor is the resulting array from the map method immediately available; a promise for the resulting array is returned instead. The work function may return a promise. `when.js` waits for that promise to resolve before resolving the promise returned from `when.map()`.
 
-when.js provides many other promise-aware, higher-order functions.  Two of the most useful are `when.all()` and `when.any()`.
+`when.js` provides many other promise-aware, higher-order functions.  Two of the most useful are `when.all()` and `when.any()`.
 
-`when.all()` digests an array of promises, returning a new promise that is resolved once each of the provided promises have themselves resolved.
+`when.all()` digests an array of promises, returning a new promise that is resolved once each provided promise has itself resolved.
 
 Similarly to `when.all()`, `when.any()` accepts an array of promises; however, the resulting promise is resolved once a single provided promise has resolved.
 
@@ -90,4 +90,4 @@ when.any(promises).then(function(value) {
 
 Be careful with the value of the promise returned from `when.any()`. As other promises in the array become resolved, the resulting value from subsequent `any` invocations may change for the same input array.  `when.any()` is a race; the first resolved promise in the array wins, and a non-promise value is considered resolved.
 
-Odds are when.js already has promise-aware support for any generic higher-order function you can imagine.  From time-based delays to task sequencing and periodic polling, when.js has it.  If by chance when.js doesn't already support a higher-order function you need, ask and we'll consider adding support.
+It's likely that when.js already has promise-aware support for any generic higher-order function you can imagine.  From time-based delays to task sequencing and periodic polling, `when.js` has it.  If by chance `when.js` doesn't already support a higher-order function you need, ask and we'll consider adding support.

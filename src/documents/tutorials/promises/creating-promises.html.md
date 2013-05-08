@@ -40,7 +40,7 @@ You can keep this chain going forever.  The returned value from one callback is 
 Creating promises for values
 ----------------------------
 
-Up to this point, you've been given promises to work with; now you will create new promises from scratch.  The easiest way to create a new promise is for a value.
+Up to this point, you've been given promises to work with; now you will create new promises from scratch.  The easiest way is to create a promise for a value.
 
 Using the previous example, this example creates a promise representing the value 0 using when.js:
 
@@ -49,13 +49,13 @@ var when = require('when');
 var promise = when(0);
 ```
 
-The `when()` function can create a promise from a promise or value.  It's an easy way to normalize a value that may or may not be a promise into a promise, or even assimilate foreign promises into a Promises/A+ promise.  No need to sniff for promises vs values, just pass it through the `when()` function.
+The `when()` function can create a promise from a promise or a value.  It's an easy way to normalize a value that may or may not be a promise into a promise, or even assimilate foreign promises into a Promises/A+ promise.  No need to sniff for promises vs values, just pass it through the `when()` function.
 
 
 Creating promises for future values
 -----------------------------------
 
-The usefulness of promises is more than chaining values together, that's really a side effect of their core essence.  The real benefit is to create a promise for a currently unknown, future value.  You do this by creating a deferred object.  A deferred object is a plain JS object that contains an unresolved promise and the capability to resolve said promise.  Typically, the promise is separated from the deferred object with the promise being exposed to the outside world while the resolver is protected.
+The usefulness of promises is more than chaining values together, that's really a side effect of their core essence.  The real benefit is to create a promise for a currently unknown, future value.  You do this by creating a deferred object.  A deferred object is a plain JS object that contains an unresolved promise and the capability to resolve that promise.  Typically, the promise is separated from the deferred object with the promise being exposed to the outside world while the resolver is protected.
 
 ```javascript
 function sayHello() {
@@ -74,7 +74,7 @@ sayHello().then(function (greeting) {
 });
 ```
 
-It's important to remember that a promise may be resolved once and only once.  If you invoke `resolve()` multiple times, only the first invocation has any effect; subsequent invocations are ignored.
+Remember that a promise may be resolved once and only once.  If you invoke `resolve()` multiple times, only the first invocation has any effect; subsequent invocations are ignored.
 
 ```javascript
 function sayHello() {
@@ -96,7 +96,7 @@ sayHello().then(function (greeting) {
 });
 ```
 
-Future success is never guaranteed.  As much as we may hope for the happy path, in the real world, stuff happens.  Networks and servers go down, users click the 'cancel' button, you get the picture.  Consumers of a promise need to know when the promise is broken, and they will not receive the anticipated value.  This is done by rejecting the promise.
+Future success is never guaranteed. Networks and servers go down, users click the Cancel button, you get the picture.  Consumers of a promise need to know when the promise is broken, and they will not receive the anticipated value.  You do this by rejecting the promise:
 
 ```javascript
 function sayHello() {
