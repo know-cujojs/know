@@ -49,7 +49,7 @@ var when = require('when');
 var promise = when(0);
 ```
 
-The `when()` function can create a promise from a promise or a value.  It's an easy way to normalize a value that may or may not be a promise into a promise, or even assimilate foreign promises into a Promises/A+ promise.  No need to sniff for promises vs values, just pass it through the `when()` function.
+The `when()` function can create a promise from a promise or a value.  It's an easy way to normalize a value that may or may not be a promise into a promise, or even assimilate foreign promises into a Promises/A+ promise.  You don't need to determine whether the value is a promise; just pass it through the `when()` function.
 
 
 Creating promises for future values
@@ -96,7 +96,7 @@ sayHello().then(function (greeting) {
 });
 ```
 
-Future success is never guaranteed. Networks and servers go down, users click the Cancel button, you get the picture.  Consumers of a promise need to know when the promise is broken, and they will not receive the anticipated value.  You do this by rejecting the promise:
+Future success is never guaranteed. Networks and servers go down, users click the Cancel button, you get the picture.  Consumers of a promise need to know that the promise is broken, and they will not receive the anticipated value.  You do this by rejecting the promise:
 
 ```javascript
 function sayHello() {
