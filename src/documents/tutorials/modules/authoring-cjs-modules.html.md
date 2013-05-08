@@ -99,11 +99,11 @@ var client = require('app/mime-client');
 
 ## Limitations of CommonJS modules
 
-Many developers view CommonJS as a clean authoring format for modules.  However, browsers cannot consume the modules directly because browsers do not create the CommonJS-scoped variables.  Performance also suffers dramatically when browsers must load dozens or hundreds of modules in any non-trivial application.  You resolve this problem by using tools that generate *transport formats* to allow CommonJS modules to be concatenated and wrapped so they can operate in browsers.  Many of these tools use AMD for the transport format because it does the job efficiently and is so widely supported.
+Many developers view CommonJS as a clean *authoring format* for modules.  However, browsers cannot consume the modules directly because browsers do not create the CommonJS-scoped variables.  Performance also suffers dramatically when browsers must load dozens or hundreds of modules in any non-trivial application.  You resolve this problem by using tools that generate *transport formats* to allow CommonJS modules to be concatenated and wrapped so they can operate in browsers.  Many of these tools use AMD for the transport format because it does the job efficiently and is so widely supported.
 
 For example, cujo.js's cram.js wraps CommonJS modules inside AMD modules and bundles all the modules together for efficient loading.
 
-Unfortunately, most of these tools require a build step to convert from an authoring format to a transport format.  ujo.js's curl.js does *not* require a build step, in most cases.  The build step complicates the development process and makes it harder to get started on a new project.
+Unfortunately, most of these tools require a build step to convert from an authoring format to a transport format.  cujo.js's curl.js does *not* require a build step, in most cases.  The build step complicates the development process and makes it harder to get started on a new project.
 
 *Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for our next lesson.
 

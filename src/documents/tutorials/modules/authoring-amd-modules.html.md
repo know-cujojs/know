@@ -12,7 +12,7 @@ order: 1
 
 Asynchronous Module Definition (AMD) is the most widely supported JavaScript module format.  It's used by cujo.js, jQuery, dojo, Mootools, and dozens of other libraries and frameworks.  AMD is designed for browser environments, but you can also use it in non-browser environments.  
 
-Authoring AMD modules has three main steps:
+Authoring an AMD module typically involves three basic steps:
 
 1. Wrap your code in a `define()`.
 2. List your dependencies.
@@ -39,7 +39,7 @@ define(['rest', 'rest/interceptor/mime'], function (rest, mime) {
 });
 ```
 
-Our module, "app/mime-client", relies on two other modules, "rest" and "rest/interceptor/mime".  The two dependent modules are mapped onto the factory's parameter list as `rest` and `mime`.  You may name these however you wish, of course.  
+Our module, "app/mime-client", relies on two other modules, "rest" and "rest/interceptor/mime".  The two required modules are mapped onto the factory's parameter list as `rest` and `mime`.  You may name these however you wish, of course.  
 
 Note that slashes in a module id do not indicate it is an url.  AMD ids use slashes to indicate a *namespace*.  In this example, the app/mime-client module depends on a module in the "rest/interceptor" namespace.  (You're getting a sneak preview of AMD "packages" here.  We'll cover those in more detail in another tutorial.)  
 
@@ -65,7 +65,11 @@ define(function (require, exports, module) {
 });
 ```
 
-Notice that the factory receives *up to* three arguments that emulate the CommonJS `require`, `exports`, and `module` variables.  In CommonJS, dependencies are assigned to local variables using `require(id)`.  You should "export" your module, rather than return it.  You can export in one of two ways.  The simplest way, shown above, is to assign directly to `module.exports`. Note: `module.exports = ` is not strictly CommonJS.  However, it is a node.js extension to CommonJS that is widely supported.  
+Notice that the factory receives *up to* three arguments that emulate the CommonJS `require`, `exports`, and `module` variables.  
+
+In CommonJS, dependencies are assigned to local variables using `require(id)`.  In CommonJS this convention is known as the free require (or less commonly, the scoped require). In AMD it is known as the local require.
+
+You should export your module, rather than return it.  You can export in one of two ways.  The simplest way, shown above, is to assign the module directly to `module.exports`. Note: `module.exports = ` is not strictly CommonJS.  However, it is a node.js extension to CommonJS that is widely supported.  
 
 The second way is to set properties on the `exports` object.  There are use cases for each export mechanism, but that's a great topic for an upcoming tutorial.  
 

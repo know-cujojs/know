@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Authoring Universal Module Definition (UMD) modules
+title: Authoring UMD modules
 tags: ['modules', 'umd', 'amd', 'commonjs', 'curl']
 url: '/tutorials/modules/authoring-umd-modules'
 urls: ['/tutorials/modules/authoring-umd-modules.html.md']
@@ -81,7 +81,7 @@ If you already specify dependencies using AMD's "local require", this pattern wi
 // using the define signature that triggers AMD-wrapped CommonJS
 define(function (require) {
 
-"use strict";
+
 	var store, meld, cache = {};
 
 	// use the injected require() to specify dependencies
@@ -110,7 +110,7 @@ The cujo.js team uses this pattern quite often.
 
 ## Normalize to full AMD-wrapped CommonJS
 
-If your module code is already in node.js or CommonJS format, you can use this wrapper to you keep it that way.
+If your module code is already in node.js or CommonJS format, you can use this wrapper to keep it that way.
 
 ```js
 // app/CachingStore
@@ -143,6 +143,6 @@ define(function (require, exports, module) {
 
 This time, all three CommonJS scoped variables (require, exports, module) are injected.  The environment inside the IIFE mimics CommonJS and probably works for all modules that do not access environment-specific variables, such as node's `__dirname`.  
 
-Note that the factory *does not return the exports* in this variation.  It is expected that you will decorate the provided `exports` object or assign to `module.exports`.
+Note that the factory *does not return the exports* in this variation.  It is expected that you will add properties and methods to the provided `exports` object or assign to `module.exports`.
 
 'Tis the season for wrapping!

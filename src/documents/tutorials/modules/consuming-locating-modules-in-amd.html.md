@@ -18,9 +18,9 @@ uri resolves to a file path on the server or a url in the browser.
 
 ## Default module location and base url
 
-For very simple applications, you can put all modules in
+For very simple applications, you could put all modules in
 one location. Call this location the "base url".  The method for resolving
-module ids can be basic string concatenation:
+module ids could be basic string concatenation:
 
 ```
 module url = base url + module id + ".js"
@@ -57,7 +57,7 @@ define(function (require) {
 ### Module ids != urls
 
 It is easy to get started by setting the base url and putting a few
-modules in that folder, but don't be lulled into thinking that module ids
+modules in that folder, but don't be tempted to think that module ids
 are simply shortened urls.  This pattern fails to scale beyond relatively small
 applications.  Larger applications require organizational strategies.  Another tutorial
 explores an organizational strategy called "packages".
