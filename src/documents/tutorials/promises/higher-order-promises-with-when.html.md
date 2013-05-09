@@ -56,7 +56,7 @@ Using the same data array and the same doubling function, this time instead of N
 
 Remember that a promise's value may not be immediately available. Nor is the resulting array from the map method immediately available; a promise for the resulting array is returned instead. The work function may return a promise. when.js waits for that promise to resolve before resolving the promise returned from `when.map()`.
 
-when.js provides support for many other promise-aware, higher-order functions, from time-based delays to task sequencing and periodic polling. Two of the most useful funcions are `when.all()` and `when.any()`.
+when.js provides support for many other promise-aware, higher-order functions, from time-based delays to task sequencing and periodic polling. Two of the most useful functions are `when.all()` and `when.any()`.
 
 `when.all()` digests an array of promises, returning a new promise that is resolved once each provided promise has itself resolved.
 
