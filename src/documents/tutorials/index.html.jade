@@ -8,7 +8,7 @@ p Get up to speed with core cujoJS concepts quickly.
   | Each tutorial is composed of discreet lessons that teach just what you need to know in order to be productive.
   | You should feel free to jump in and out of lessons, but if a prerequisite concept is not you should go back and cover that material first.
 
-each track in getFiles({ layout: 'lesson-plan' }, { title: 1 }).toJSON()
+each track in getFiles({ layout: 'lesson-plan' }, { order: 1 }).toJSON()
   h2= track.title
   != track.contentRenderedWithoutLayouts
   nav.linklist
