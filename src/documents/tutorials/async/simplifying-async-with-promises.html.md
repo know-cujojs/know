@@ -5,8 +5,8 @@ tags: ['promises', 'when', 'async']
 url: '/tutorials/async/simplifying-async-with-promises'
 urls: ['/tutorials/async/simplifying-async-with-promises.html.md']
 toc: true
-ctime: 2013-05-17
-mtime: 2013-05-17
+ctime: 2013-05-17T01:00:00
+mtime: 2013-05-17T01:00:00
 order: 2
 ---
 

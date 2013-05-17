@@ -5,8 +5,8 @@ tags: ['promises', 'when', 'async']
 url: '/tutorials/async/async-programming-is-messy'
 urls: ['/tutorials/async/async-programming-is-messy.html.md']
 toc: true
-ctime: 2013-05-17
-mtime: 2013-05-17
+ctime: 2013-05-17T00:00:00
+mtime: 2013-05-17T00:00:00
 order: 1
 ---
 
