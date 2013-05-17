@@ -5,8 +5,8 @@ tags: ['promises', 'when', 'async']
 url: '/tutorials/async/mastering-async-error-handling-with-promises'
 urls: ['/tutorials/async/mastering-async-error-handling-with-promises.html.md']
 toc: true
-ctime: 2013-05-15
-mtime: 2013-05-15
+ctime: 2013-05-17
+mtime: 2013-05-17
 order: 3
 ---
 
