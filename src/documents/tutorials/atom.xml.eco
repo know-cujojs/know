@@ -10,13 +10,13 @@
     <email><%= @site.email %></email>
   </author>
 
-  <% for document in @getFiles({ url: /^\/tutorials\/[^/]+\/[^/]/ }, { date: -1 }).toJSON(): %>
+  <% for document in @getFiles({ layout: 'tutorial' }, { ctime: -1 }).toJSON().splice(0, 10): %>
     <entry>
       <title><%= document.title %></title>
       <link href="<%= @site.url+'/'+document.url %>"/>
       <updated><%= document.date.toISOString() %></updated>
       <id><%= @site.url+'/'+document.url %></id>
-      <content type="html"><%= document.contentRendered %></content>
+      <content type="html"><%= document.contentRenderedWithoutLayouts %></content>
     </entry>
   <% end %>
 </feed>

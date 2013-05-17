@@ -7,7 +7,7 @@ article.lesson-plan
   .page-content!= content
   nav.linklist
     ol
-      each lesson in getFiles({ url: { $startsWith: document.url + '/' } }, { order: 1 }).toJSON()
+      each lesson in getFiles({ layout: 'tutorial', url: { $startsWith: document.url } }, { order: 1 }).toJSON()
         li
           p
             a(href=lesson.url)= lesson.title

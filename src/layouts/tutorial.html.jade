@@ -2,6 +2,7 @@
 layout: default
 ---
 
+- var lessonPlan = getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON()
 
 article.tutorial
   header
@@ -10,11 +11,11 @@ article.tutorial
   .row
     .span4.pull-right.hide-print
       aside.lesson-plan
-        h4= getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON().title
+        h4= lessonPlan.title
           |  outline
         nav.linklist
           ol
-            each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
+            each tutorial in getFiles({ layout: 'tutorial', url: { $startsWith: lessonPlan.url } }, { order: 1 }).toJSON()
               li
                 if tutorial.url === document.url
                   p
@@ -29,7 +30,8 @@ article.tutorial
                   p
                     a(href=tutorial.url)= tutorial.title
       div.report-issues.pull-right
-        a(href='https://github.com/know-cujojs/know/issues/new?labels=tutorial-feedback&title=' + encodeURIComponent('Tutorial: ' + document.title), target='_blank') Report an issue
+        a(href= buildUrl('https://github.com/know-cujojs/know/issues/new', { labels: 'tutorial-feedback', title: 'Tutorial: ' + document.title }), target='_blank')
+          | Report an issue
       div.social-buttons
         != getTwitterTweetButton()
         != getGooglePlusOneButton()
@@ -44,11 +46,11 @@ article.tutorial
             br
             | Modified: 
             span.date= formatDate(document.mtime)
-        h3= getFile({ url: document.url.substring(0, document.url.lastIndexOf('/')) }).toJSON().title
+        h3= lessonPlan.title
           |  outline
         nav.linklist
           ol
-            each tutorial in getFiles({ url: { $startsWith: document.url.substring(0, document.url.lastIndexOf('/') + 1) } }, { order: 1 }).toJSON()
+            each tutorial in getFiles({ layout: 'tutorial', url: { $startsWith: lessonPlan.url } }, { order: 1 }).toJSON()
               li
                 p
                   a(href=tutorial.url)= tutorial.title

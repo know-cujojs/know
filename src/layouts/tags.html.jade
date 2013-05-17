@@ -8,7 +8,7 @@ h1 Pages tagged with '
 
 nav.linklist
   ul
-    each doc in getCollection('documents').findAll({ tags: { $in: document.tag } }, { date: -1 }).toJSON()
+    each doc in getCollection('documents').findAll({ tags: { $in: document.tag } }, { ctime: -1 }).toJSON()
       li
         p
           a(href=doc.url)= doc.title
