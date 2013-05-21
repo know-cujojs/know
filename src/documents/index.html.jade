@@ -23,7 +23,7 @@ title: 'Home'
         each tutorial in getFiles({ layout: 'tutorial' }, { ctime: -1 }).toJSON().slice(0, 15)
           li
             p
-              span= formatDate(tutorial.date)
+              span= formatDate(tutorial.ctime)
               |  &raquo;&nbsp;
               a(href=tutorial.url)= tutorial.title
               if tutorial.summary

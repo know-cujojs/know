@@ -6,7 +6,7 @@ url: '/tutorials/promises/consuming-promises'
 urls: ['/tutorials/promises/consuming-promises.html.md']
 toc: false
 ctime: 2013-03-25
-mtime: 2013-03-28
+mtime: 2013-05-21
 order: 1
 ---
 
