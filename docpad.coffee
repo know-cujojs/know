@@ -47,6 +47,7 @@ docpadConfig =
       copyright: "© " + moment().utc().format('YYYY') + " the original author or authors"
 
       services:
+        disqus: 'cujojs-blog'
         twitterTweetButton: 'cujojs'
         twitterFollowButton: 'cujojs'
         githubFollowButton: 'cujojs'

@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+article.post
+  header
+    h1= document.title
+
+  .row
+    .span4.pull-right.hide-print
+      aside.lesson-plan
+        h4 Outline
+        nav.linklist
+          if document.tableOfContents && document.tableOfContents.length
+            ul
+              each item in document.tableOfContents
+                li
+                  p: a(href='#' + item.id)= item.text
+                  if item.children
+                    ul
+                      each child in item.children
+                        li
+                          p: a(href='#' + child.id)= child.text
+      div.social-buttons
+        != getTwitterTweetButton()
+        != getGooglePlusOneButton()
+
+    .span8
+      p= formatDate(document.ctime, 'MMMM Do YYYY')
+      .post-content!= content
+
+      hr
+      footer
+        div.published
+          | Published: 
+          span.date= formatDate(document.ctime)
+          if document.ctime.getTime() < document.mtime.getTime()
+            br
+            | Modified: 
+            span.date= formatDate(document.mtime)
+        h3 Outline
+        nav.linklist
+          if document.tableOfContents && document.tableOfContents.length
+            ul
+              each item in document.tableOfContents
+                li
+                  p: a(href='#' + item.id)= item.text
+                  if item.children
+                    ul
+                      each child in item.children
+                        li
+                          p: a(href='#' + child.id)= child.text
+        if document.tags && document.tags.length
+          section#tags
+            h3 Tags
+            nav.linklist.tags
+              ul
+                each tag in document.tags.sort()
+                  li
+                    a(href=getTagUrl(tag) + '.html')= tag
+        - var comments = getDisqus()
+        if comments
+          h3 Comments
+          != comments
