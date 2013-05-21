@@ -31,6 +31,7 @@ article.tutorial
                     a(href=tutorial.url)= tutorial.title
       div.report-issues.pull-right
         a(href= buildUrl('https://github.com/know-cujojs/know/issues/new', { labels: 'tutorial-feedback', title: 'Tutorial: ' + document.title }), target='_blank')
+          i.icon-thumbs-down
           | Report an issue
       div.social-buttons
         != getTwitterTweetButton()
@@ -46,6 +47,10 @@ article.tutorial
             br
             | Modified: 
             span.date= formatDate(document.mtime)
+        div.report-issues.pull-right
+          a(href= buildUrl('https://github.com/know-cujojs/know/issues/new', { labels: 'tutorial-feedback', title: 'Tutorial: ' + document.title }), target='_blank')
+            i.icon-thumbs-down
+            | Report an issue
         h3= lessonPlan.title
           |  outline
         nav.linklist
