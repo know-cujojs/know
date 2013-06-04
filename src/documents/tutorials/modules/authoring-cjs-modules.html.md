@@ -107,4 +107,4 @@ Unfortunately, most of these tools require a build step to convert from an autho
 
 *Why can't we just write in a module format that's friendly to both server and browser environments?*  Actually, we can!  It's called UMD, Universal Module Format, but that's a topic for our next lesson.
 
-For further reading on CommonJS Modules, visit http://wiki.commonjs.org/wiki/Modules/1.1/.
+For further reading on CommonJS Modules, visit http://wiki.commonjs.org/wiki/Modules/1.1

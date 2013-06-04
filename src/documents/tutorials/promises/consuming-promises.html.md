@@ -98,7 +98,7 @@ setTimeout(function () {
 ```
 
 From this very simple behavior, you can start to derive sophisticated systems.
-In the next tutorial, you explore how to [create promises for others to consume](./creating-promises.md.html).
+In the next tutorial, you explore how to [create promises for others to consume](./creating-promises.html.md).
 
 ## Cujo promises are Promises/A+
 
