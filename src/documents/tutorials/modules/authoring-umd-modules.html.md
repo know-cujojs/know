@@ -6,7 +6,7 @@ url: '/tutorials/modules/authoring-umd-modules'
 urls: ['/tutorials/modules/authoring-umd-modules.html.md']
 toc: true
 ctime: 2013-03-25
-mtime: 2013-03-25
+mtime: 2013-06-04
 order: 3
 ---
 

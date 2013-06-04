@@ -6,7 +6,7 @@ url: '/tutorials/modules/authoring-cjs-modules'
 urls: ['/tutorials/modules/authoring-cjs-modules.html.md']
 toc: true
 ctime: 2013-03-25
-mtime: 2013-03-26
+mtime: 2013-06-04
 order: 2
 ---
 

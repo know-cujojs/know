@@ -6,7 +6,7 @@ url: '/tutorials/modules/authoring-amd-modules'
 urls: ['/tutorials/modules/authoring-amd-modules.html.md']
 toc: true
 ctime: 2013-03-25
-mtime: 2013-03-25
+mtime: 2013-06-04
 order: 1
 ---
 

@@ -6,7 +6,7 @@ url: '/tutorials/modules/consuming-locating-modules-in-amd'
 urls: ['/tutorials/modules/consuming-locating-modules-in-amd.html.md']
 toc: true
 ctime: 2013-04-11
-mtime: 2013-04-11
+mtime: 2013-06-04
 order: 5
 ---
 
