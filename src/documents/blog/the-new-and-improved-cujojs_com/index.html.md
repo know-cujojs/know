@@ -7,8 +7,6 @@ ctime: 2013-06-07
 mtime: 2013-06-07
 ---
 
-# The new and improved cujojs.com!
-
 cujoJS is taking off!  We've always felt that there was a need for better
 architectural tools in JavaScript.  Obviously, we are not alone.  It seems
 like we make new friends every day: developers from all over the JavaScript
@@ -23,7 +21,7 @@ as our scant educational materials.  We're happy to announce we're beefing up!
 ## cujojs.com
 
 We migrated [cujojs.com](http://cujojs.com) from a vanilla github-pages site
-to a _real web app_.  Notice I didn't way web _page_.  Yes, it is an actual
+to a _real web app_.  Notice I didn't say "web _page_".  Yes, it is an actual
 _application_ with unit tests and everything.  Can that _other framework_ claim
 the same?  "Tests? How do I write tests for this?"
 
@@ -33,9 +31,8 @@ says it was all a _piece of cake_ since he used [cujoJS/seed](http://github.com/
 There's lots to learn from the [source code](https://github.com/cujojs/cujojs.github.com).
 
 Kudos also to [Craig Walls](https://github.com/habuma) who contributed the
-Contacts sample app on the home page.  Craig is a strong Spring/Java engineer,
-but he was able to create his first cujoJS app in short order using
-[cujoJS/seed](http://github.com/cujoJS/seed).
+Contacts sample app on the home page.  This is Craig's first cujoJS app!  He
+created it using [cujoJS/seed](http://github.com/cujoJS/seed).
 
 Aside from the fresh new look of [cujojs.com](http://cujojs.com), our _inner
 engineers_ are also quite proud of its underlying architecture.  We'll do a
