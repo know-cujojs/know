@@ -13,7 +13,7 @@ like we make new friends every day: developers from all over the JavaScript
 community continually reach out to thank us for bringing sanity to their code
 -- and their life.
 
-These same folks pummel us for our lack of a real web presence as well
+These same folks knock us for our lack of a real web presence as well
 as our scant educational materials.  We're happy to announce we're beefing up!
 
 <a name="jump"></a>
