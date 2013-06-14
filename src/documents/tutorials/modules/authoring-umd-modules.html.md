@@ -62,7 +62,7 @@ define(['./store', 'meld'], function (store, meld) {
 		? define 
 		: function (ids, factory) { 
 			// note: the lambda function cannot be removed in some CJS environments
-			var deps = ids.map(function (id) { return require(id); };
+			var deps = ids.map(function (id) { return require(id); });
 			module.exports = factory.apply(null, deps); 
 		}
 ));
