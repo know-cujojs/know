@@ -18,9 +18,9 @@ In the browser, we've been conditioned to minimize slow HTTP fetches.  We typica
 * Each module can be debugged independently, which decreases testing costs.
 * Each module's scope and context can be controlled, which can be used to isolate the modules.
 
-The last point is worth investigating further.  
+The last point is worth investigating further.
 
-Server-side environments aren't encumbered by the shared global scope of browsers.  Rather than inject global variables, such as `document` and `window`, into the scope of the module, they can inject module-specific variables that can be used to help author the module.  
+Server-side environments aren't encumbered by the shared global scope of browsers.  Rather than inject global variables, such as `document` and `window`, into the scope of the module, they can inject module-specific variables that can be used to help author the module.
 
 The CommonJS Modules/1.1 spec standardized these *scoped variables*: `require`, `exports`, and `module`.  Let's explore these by looking at the code of a very simple CommonJS module:
 
@@ -39,15 +39,15 @@ console.log(module.id); // should log "app/mime-client"
 exports.client = client;
 ```
 
-Note the absence of a wrapper around this code, such as an [Immediately Invoked Function Expression (IIFE)](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) or [AMD](./authoring-amd-modules.html.md)'s `define(factory)`.  It also appears as if we are working with global variables.  We are not!  Because each file executes in its own *module scope*, the `var` statements actually declare variables that are scoped to the module, just as if it were wrapped in a function.  
+Note the absence of a wrapper around this code, such as an [Immediately Invoked Function Expression (IIFE)](http://benalman.com/news/2010/11/immediately-invoked-function-expression/) or [AMD](./authoring-amd-modules.html.md)'s `define(factory)`.  It also appears as if we are working with global variables.  We are not!  Because each file executes in its own *module scope*, the `var` statements actually declare variables that are scoped to the module, just as if it were wrapped in a function.
 
 Of course, the three CommonJS variables, `require`, `exports`, and `module`, are also scoped to the module.  Let's investigate each one in detail.
 
 ## require
 
-If your module requires other modules to do its work, you can declare references to the other modules into the current module's scope by using the `require` function.  Call `require(id)` for each module.  Typically, you assign each module to a local variable.  This example pulls in references to two modules: "rest" and "rest/interceptor/mime".  
+If your module requires other modules to do its work, you can declare references to the other modules into the current module's scope by using the `require` function.  Call `require(id)` for each module.  Typically, you assign each module to a local variable.  This example pulls in references to two modules: "rest" and "rest/interceptor/mime".
 
-Notice that "rest/interceptor/mime" has slashes in it much like a file path or a url.  However, it is neither!  Like AMD, CommonJS uses slashes to indicate namespaces for modules.  The name before the first slash is the *package name*.  CommonJS modules are almost always grouped with related modules into a larger structure known as a *package*.  
+Notice that "rest/interceptor/mime" has slashes in it much like a file path or a url.  However, it is neither!  Like AMD, CommonJS uses slashes to indicate namespaces for modules.  The name before the first slash is the *package name*.  CommonJS modules are almost always grouped with related modules into a larger structure known as a *package*.
 
 ## exports
 
@@ -59,11 +59,11 @@ The `module` variable was originally conceived to provide metadata about the mod
 
 ### exports vs. module.exports
 
-The `exports` variable is an object literal.  It holds all the functions and properties that your module provides.  It's too deep to explain fully in this tutorial, but this authoring pattern allows developers to *intentionally* create *resolvable* circular dependencies.  
+The `exports` variable is an object literal.  It holds all the functions and properties that your module provides.  It's too deep to explain fully in this tutorial, but this authoring pattern allows developers to *intentionally* create *resolvable* circular dependencies.
 
 However, what if your module is simply a function, a constructor, or a string template?  Many developers believe that a module should be able to export any object, *especially functions*, despite the risk of creating an unresolvable circular dependency.  Therefore, `module.exports` was born.
 
-Let's contrast how the two different export patterns look. 
+Let's contrast how the two different export patterns look.
 
 In the previous code sample, a dependent module would acquire the `client` function with the following code:
 

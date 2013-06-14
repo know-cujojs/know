@@ -119,7 +119,7 @@ normalizes to the module whose name is the same as the current level. `..`
 normalizes to the module whose name is the same as the level that is one
 level up from the current level.  _Yes, that is confusing!_  Perhaps that's
 why you don't see these used often.  Hopefully, some examples might help.
-For example, given that the current module is "app/billing/billTo/Customer", 
+For example, given that the current module is "app/billing/billTo/Customer",
 the environment normalizes these ids as follows:
 
 ```js

@@ -10,7 +10,7 @@ mtime: 2013-06-04
 order: 5
 ---
 
-In [module ids](./consuming-modules-module-ids.html.md), we noted that 
+In [module ids](./consuming-modules-module-ids.html.md), we noted that
 slashes delineate terms, which represent hierarchies of modules.  Ultimately,
 though, AMD environments must locate modules.  The ids must somehow resolve
 to uris.  It's possible that the uris resolve to records in a database
@@ -19,8 +19,8 @@ uri resolves to a file path on the server or a url in the browser.
 
 ## Default module location and base url
 
-For *extremely simple* applications, you could hypothetically put all of the 
-modules in one location. Call this location the "base url".  The method for 
+For *extremely simple* applications, you could hypothetically put all of the
+modules in one location. Call this location the "base url".  The method for
 resolving module ids would simply be basic string concatenation:
 
 ```

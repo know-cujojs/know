@@ -12,7 +12,7 @@ order: 3
 
 If you run your code in a browser, [AMD modules](./authoring-amd-modules.html.md) are a great choice.  If your code runs in a server-side environment, such as RingoJS or node.js, [CommonJS modules](./authoring-cjs-modules.html.md) are the easiest option.
 
-> How can I write code that runs in both browsers and servers?  
+> How can I write code that runs in both browsers and servers?
 
 Even if you never plan to use your code in a server-side environment, testing in node.js can be incredibly convenient.  Why not write it to work in both?
 
@@ -20,7 +20,7 @@ Even if you never plan to use your code in a server-side environment, testing in
 
 > *A: Universal Module Definition!*
 
-UMD patterns provide compatibility with multiple environments.  Many, but not all, UMD patterns do this by wrapping your module code in an [Immediately Invoked Functional Expression (IIFE)](http://benalman.com/news/2010/11/immediately-invoked-function-expression/).  The resulting environment inside the IIFE is normalized to the particular environment that your module code expects by mocking and/or injecting variables.  The code outside the function bridges the environment inside the IIFE to the outside environment.  The normalized environment inside the IIFE is very AMD-like or very CommonJS-like, depending on the specific UMD flavor.  
+UMD patterns provide compatibility with multiple environments.  Many, but not all, UMD patterns do this by wrapping your module code in an [Immediately Invoked Functional Expression (IIFE)](http://benalman.com/news/2010/11/immediately-invoked-function-expression/).  The resulting environment inside the IIFE is normalized to the particular environment that your module code expects by mocking and/or injecting variables.  The code outside the function bridges the environment inside the IIFE to the outside environment.  The normalized environment inside the IIFE is very AMD-like or very CommonJS-like, depending on the specific UMD flavor.
 
 There are dozens of UMD variations in use in the wild.  You can find several samples in this [UMD repo](https://github.com/umdjs/umd), as well other [robust UMD patterns](https://gist.github.com/unscriptable/4118495) around the web.
 
@@ -58,23 +58,23 @@ define(['./store', 'meld'], function (store, meld) {
 });
 
 }(
-	typeof define == 'function' && define.amd 
-		? define 
-		: function (ids, factory) { 
+	typeof define == 'function' && define.amd
+		? define
+		: function (ids, factory) {
 			// note: the lambda function cannot be removed in some CJS environments
 			var deps = ids.map(function (id) { return require(id); });
-			module.exports = factory.apply(null, deps); 
+			module.exports = factory.apply(null, deps);
 		}
 ));
 ```
 
-The entire module is wrapped in an IIFE, and the `define` function is passed in as a parameter.  At the bottom of the file, the code snippet, `typeof define == 'function' && define.amd`, is the standard "sniff" for an AMD environment.  If the sniff evaluates to `true`, then the environment is AMD and the global `define` is passed into the IIFE.  You "export" your module in the usual AMD way by returning something from the factory.  
+The entire module is wrapped in an IIFE, and the `define` function is passed in as a parameter.  At the bottom of the file, the code snippet, `typeof define == 'function' && define.amd`, is the standard "sniff" for an AMD environment.  If the sniff evaluates to `true`, then the environment is AMD and the global `define` is passed into the IIFE.  You "export" your module in the usual AMD way by returning something from the factory.
 
 If the AMD-sniff evaluates to `false`, the code mimics a node-like CommonJS environment.  To work with your AMD code, the IIFE injects a function that behaves similarly to AMD's `define`: it resolves all ids to modules and injects them into the factory function as arguments.  It then takes the return value from the factory and sets `module.exports` in typical node.js fashion.
 
 ## Normalize to an AMD factory with injected require()
 
-If you already specify dependencies using AMD's "local require", this pattern won't feel like much of a change.  
+If you already specify dependencies using AMD's "local require", this pattern won't feel like much of a change.
 
 ```js
 // app/CachingStore
@@ -99,8 +99,8 @@ define(function (require) {
 	return store;
 });
 }(
-	typeof define == 'function' && define.amd 
-		? define 
+	typeof define == 'function' && define.amd
+		? define
 		: function (factory) { module.exports = factory(require); }
 ));
 ```
@@ -136,13 +136,13 @@ define(function (require, exports, module) {
 	exports.store = store;
 });
 }(
-	typeof define == 'function' && define.amd 
-		? define 
+	typeof define == 'function' && define.amd
+		? define
 		: function (factory) { factory(require, exports, module); }
 ));
 ```
 
-This time, all three CommonJS scoped variables (require, exports, module) are injected.  The environment inside the IIFE mimics CommonJS and probably works for all modules that do not access environment-specific variables, such as node's `__dirname`.  
+This time, all three CommonJS scoped variables (require, exports, module) are injected.  The environment inside the IIFE mimics CommonJS and probably works for all modules that do not access environment-specific variables, such as node's `__dirname`.
 
 Note that the factory *does not return the exports* in this variation.  It expects that you'll decorate the provided `exports` object or assign to `module.exports`.
 
