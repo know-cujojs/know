@@ -12,15 +12,19 @@ title: 'Home'
   p Your source for everything you may want to learn about cujoJS, including getting started tutorials and sample applications.
 
 .row
-  .span6
-    h2 Tutorials
-    p Our tutorials walk you through everything you need to know.  Starting with the fundamentals, you'll be a cujoJS expert in no time.
-    p: a.btn(href="/tutorials") View Tutorials
+  .span8
+    - var post = getFiles({ layout: 'post' }, { ctime: -1 }).toJSON()[0]
+    if post && post.contentRenderedWithoutLayouts
+      h2 Recently Blogged
+      h3(style='margin-top: 0')= post.title
+      div!= post.contentRenderedWithoutLayouts.split('<a name="jump"></a>')[0]
+      p: a(href=post.url + '#jump') Continue reading...
+      p: a.btn(href='/blog') All blog posts
 
-    h3 Latest tutorials
+    h2 Latest tutorials
     nav.linklist
       ul
-        each tutorial in getFiles({ layout: 'tutorial' }, { ctime: -1 }).toJSON().slice(0, 15)
+        each tutorial in getFiles({ layout: 'tutorial' }, { ctime: -1 }).toJSON().slice(0, 8)
           li
             p
               span= formatDate(tutorial.ctime)
@@ -28,21 +32,25 @@ title: 'Home'
               a(href=tutorial.url)= tutorial.title
               if tutorial.summary
                 span= ' - ' + tutorial.summary
-  .span6
+
+    p: a.btn(href="/tutorials") All tutorials
+
+  .span4
     h2 Get cujoJS
     p Download the latest versions of each library.
     p: a.btn(href="/downloads") Get cujoJS
 
-    h2 Reference documentation
+    h2 Reference docs
     p Complete reference documentation for each cujoJS library.
-    p: a.btn(href="/documentation") View Reference Docs
+    p: a.btn(href="/documentation") Reference docs
 
-    h2 Sample applications
+    h2 Sample apps
     p Sample applications apply cujoJS concepts within a specific domain.
-    p: a.btn(href="/samples") View Samples
+    p: a.btn(href="/samples") Samples apps
 
     h2 Need assistance?
     :markdown
       Join cujoJS's [mailing list](https://groups.google.com/d/forum/cujojs) where you can find solutions, get the latest news, or share successes.
       If you prefer live discussion, join the [#cujojs room on freenode](irc://irc.freenode.net:6697/#cujojs).
-      Professional support packages are also available from [SitePen](http://www.sitepen.com/support/).
+
+      Professional support packages are available from [SitePen](http://www.sitepen.com/support/).

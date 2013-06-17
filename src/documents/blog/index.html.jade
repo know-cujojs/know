@@ -1,0 +1,27 @@
+---
+layout: page
+title: Blog
+url: /blog
+pageOrder: 5
+---
+
+- var year = '';
+#blog-archives
+  each post in getFiles({ layout: 'post' }, { ctime: -1 }).toJSON()
+    - post.year = formatDate(post.ctime, 'YYYY')
+    - post.month = formatDate(post.ctime, 'MMM')
+    - post.day = formatDate(post.ctime, 'DD')
+    if post.year != year
+      - year = post.year
+      h2= post.year
+    article
+      h3
+        a(href=post.url)= post.title
+      time(datetime=post.ctime.toISOString(), pubdate)
+        span.month= post.month
+        span.day= post.day
+        span.year= post.year
+      if post.contentRenderedWithoutLayouts
+        .post!= post.contentRenderedWithoutLayouts.split('<a name="jump"></a>')[0]
+        p
+          a(href=post.url + '#jump') Continue reading...

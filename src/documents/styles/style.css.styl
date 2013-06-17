@@ -116,13 +116,13 @@ footer .last-update
   animation-duration(3s)
   animation-name(slowfadein)
 
-article.tutorial .published
+article .published
   float right
   text-align right
   font-size 12px
   margin-bottom 4px
 
-article.tutorial .published .date
+article .published .date
   font-style italic
 
 nav.tags ul
@@ -166,6 +166,97 @@ aside.lesson-plan
 .project .install-npm,
 .project .install-bower
   margin-bottom: 10px;
+
+#blog-archives
+
+  h3
+    font-size: 1.5em
+
+  h3 a
+    text-decoration none
+    font-weight normal
+
+  h3 a:hover
+    color #08c
+
+  time
+    line-height 1.6em
+
+  time .month
+    text-transform uppercase
+
+  .post
+    h1, h2, h3, h4, h5, h6
+      display block
+      color inherit
+      font-size: 1.2em
+      position static
+      float none
+
+@media (max-width: 767px)
+  #blog-archives
+
+    h2
+      display none
+
+    time
+      display block
+      margin-bottom 10px
+      color #222
+
+    time .month:after
+      content: ' '
+
+    time .day:after
+      content: ', '
+
+@media (min-width: 768px)
+
+  #blog-archives
+    width 70%
+    margin-left auto
+    margin-right auto
+
+    article
+      position relative
+      margin-left 5em
+      padding 0.2em 0 .7em 7em
+
+    h2
+      font-weight normal
+      color #aaa
+      margin 0
+      display inline-block
+      position relative
+      float left
+
+    h3
+      color #222
+      margin 0
+
+    h3 a
+      display inline-block
+      color inherit
+
+    time
+      position absolute
+      text-align right
+      left 2em
+      top 1.5em
+      color #aaa
+      font-size .9em
+      line-height 1.2em
+
+    time .month
+    time .day
+      display inline-block
+
+    time .month
+      margin-right 3px
+
+    time .year
+      display none
+
 
 // animations
 
