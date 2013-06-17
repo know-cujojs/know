@@ -1,10 +1,11 @@
 ---
 layout: post
 title: The new and improved cujojs.com!
+author: unscriptable
 tags: []
 toc: true
-ctime: 2013-06-07
-mtime: 2013-06-07
+ctime: 2013-06-17
+mtime: 2013-06-17
 ---
 
 cujoJS is taking off!  We've always felt that there was a need for better
@@ -42,7 +43,7 @@ is so awesome.
 Read the [cujoJS manifesto](http://cujojs.com/manifesto.html) to see what
 motivates us.  If you feel similarly, consider joining us!
 
-## Know cujoJS
+## know cujoJS
 
 If you're reading this on the web, you're already witnessing the new *cujoJS
 developer center*, [know.cujojs.com](http://know.cujojs.com).  This is _the_
@@ -54,7 +55,7 @@ We recently received unprompted praise from an experienced technical trainer
 who declared that the tutorials about JavaScript modules are *the best
 on the web*!
 
-Know cujoJS exists thanks to the diligent efforts of [Scott Andrews](https://github.com/scothis)
+know cujoJS exists thanks to the diligent efforts of [Scott Andrews](https://github.com/scothis)
 who created the entire site using [DocPad](http://docpad.org) and even wrote
 many of the initial tutorials.
 

@@ -27,6 +27,9 @@ article.post
 
     .span8
       p= formatDate(document.ctime, 'MMMM Do YYYY')
+        br
+        | by 
+        a(href=buildUrl('https://github.com/{username}', { username: document.author }), target='_blank')= document.author
       .post-content!= content
 
       hr

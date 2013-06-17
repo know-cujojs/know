@@ -14,7 +14,12 @@
     <entry>
       <title><%= document.title %></title>
       <link href="<%= @site.url + document.url %>"/>
-      <updated><%= document.date.toISOString() %></updated>
+      <updated><%= document.mtime.toISOString() %></updated>
+      <published><%= document.ctime.toISOString() %></published>
+      <author>
+        <name><%= document.author %></name>
+        <uri><%= buildUrl('https://github.com/{username}', { username: document.author }) %></uri>
+      </author>
       <id><%= @site.url + document.url %></id>
       <content type="html" xml:base="<%= @site.url + document.url %>"><%= document.contentRenderedWithoutLayouts %></content>
     </entry>
