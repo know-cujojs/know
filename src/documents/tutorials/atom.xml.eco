@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><%= @site.title %> Tutorials</title>
+  <title><%= @site.title + ' Tutorials' %></title>
   <link href="<%= @site.url + @document.url %>" rel="self"/>
-  <link href="<%= @site.url %>"/>
+  <link href="<%= @site.url + '/tutorials' %>"/>
   <updated><%= @site.date.toISOString() %></updated>
-  <id><%= @site.url + '/' %></id>
+  <id><%= @site.url + '/tutorials' %></id>
   <author>
     <name><%= @site.author %></name>
     <email><%= @site.email %></email>
