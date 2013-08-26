@@ -66,24 +66,21 @@ div.row.auto-clear
       if project.npm
         .install-npm
           h4 via npm
-          if version
-            code npm install --save 
-              = project.npm
+          code= project.npmCmd || 'npm install --save'
+            = ' ' + project.npm
+            if version
               | @~
               = version
-          else
-            code npm install --save 
-              = project.npm
+            else
               | @
               = buildUrl('https://github.com/{org}/{project}/tarball/{refspec}', { org: project.org, project: name, refspec: release.refspec })
       if project.bower
         .install-bower
           h4 via bower
-          if version
-            code bower install --save 
-              = project.bower
+          code= project.bowerCmd || 'bower install --save'
+            = ' ' + project.bower
+            if version
               | #~
               = version
-          else
-            code bower install --save 
+            else
               = project.bower
