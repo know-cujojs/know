@@ -80,12 +80,10 @@ div.row.auto-clear
         .install-bower
           h4 via bower
           if version
-            code "
+            code bower install --save 
               = project.bower
-              | ": "~
+              | #~
               = version
-              | "
           else
-            code "
+            code bower install --save 
               = project.bower
-              | ": ""
