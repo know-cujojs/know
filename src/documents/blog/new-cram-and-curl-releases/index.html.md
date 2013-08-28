@@ -4,8 +4,8 @@ title: New cram.js and curl.js releases!
 author: unscriptable
 tags: ['modules', 'amd', 'commonjs', 'curl', 'es6', 'cram']
 toc: true
-ctime: 2013-08-27
-mtime: 2013-08-27
+ctime: 2013-08-28 12:00:00
+mtime: 2013-08-28 12:00:00
 ---
 
 Five releases in one week!  So, what’s new?
@@ -37,12 +37,12 @@ or updated via npm:
 Read more about the new cram.js
 [releases](https://github.com/cujojs/cram/releases/).
 
-## What's next for cram.js?  
+## What's next for cram.js?
 
 It feels like it's time to elevate cram.js's
 "official" status to "beta", but we'll need more unit tests before that.
 We're also prototyping a JavaScript API so cram.js could be used as a grunt
-plugin, for instance.  Outputting multiple, coordinated bundles would be 
+plugin, for instance.  Outputting multiple, coordinated bundles would be
 nice to have, too.
 
 ## curl.js gets some much-needed updates
@@ -107,7 +107,7 @@ curl.js can be installed using bower:
 
 Read more about the curl.js [releases](https://github.com/cujojs/curl/releases).
 
-## What's next for curl.js?  
+## What's next for curl.js?
 
 curl.js will get a [folder reorg](https://github.com/cujojs/curl/issues/178)
 in the very near future, as well as centralized docs.  curl may also get a
@@ -126,4 +126,4 @@ importantly, how does it affect your current and future codebase?
 
 We've got some answers, but need your feedback on some important decisions!
 Read more about
-[the future of curl.js and cram.js](the-future-looks-bright-for-modules-but-what-about-curl/).
+[the future of curl.js and cram.js](/blog/the-future-looks-bright-for-modules-but-what-about-curl/).

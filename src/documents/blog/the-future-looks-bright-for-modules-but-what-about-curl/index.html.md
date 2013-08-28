@@ -4,8 +4,8 @@ title: The future looks bright for modules, but what about curl.js?
 author: unscriptable
 tags: ['modules', 'amd', 'commonjs', 'curl', 'es6', 'cram']
 toc: true
-ctime: 2013-08-28
-mtime: 2013-08-28
+ctime: 2013-08-28 13:00:00
+mtime: 2013-08-28 13:00:00
 ---
 
 In an increasingly mobile-first, JavaScript-everywhere landscape, the
@@ -14,7 +14,7 @@ architecture has never been more clear.  On the cujoJS team,
 we're continually researching and developing new and better ways
 to assemble your code, whether it's AMD, CommonJS, legacy scripts,
 CSS, HTML, JSON, etc. If you haven’t done so already, check out what
-you can do with the [latest releases](../new-cram-and-curl-releases/).
+you can do with the [latest releases](/blog/new-cram-and-curl-releases/).
 
 > But what's next for curl and cram?  Isn't it about time we bumped curl to
 1.0.0?
