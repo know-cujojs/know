@@ -6,7 +6,7 @@ url: '/tutorials/modules/consuming-modules-module-ids'
 urls: ['/tutorials/modules/consuming-modules-module-ids.html.md']
 toc: true
 ctime: 2013-04-11
-mtime: 2013-06-04
+mtime: 2013-08-28
 order: 4
 ---
 
@@ -145,7 +145,8 @@ than an id by an AMD environment.
 // module app/billing/billTo/Customer
 define(function (require) {
 
-	// questionable: normalizes to "common/payee/Payee"
+	// OK: normalizes to "app/common/payee/Payee"
+	// food for thought: should common and billing be separate packages?
 	var Payee = require("../../common/payee/Payee");
 
 	// BAD: normalizes to "../util/date" -- a URL, not an ID!
