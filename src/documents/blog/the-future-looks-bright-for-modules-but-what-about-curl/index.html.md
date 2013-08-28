@@ -14,7 +14,7 @@ architecture has never been more clear.  On the cujoJS team,
 we're continually researching and developing new and better ways
 to assemble your code, whether it's AMD, CommonJS, legacy scripts,
 CSS, HTML, JSON, etc. If you haven’t done so already, check out what
-you can do with the [latest releases](new-cram-and-curl-releases/).
+you can do with the [latest releases](../new-cram-and-curl-releases/).
 
 > But what's next for curl and cram?  Isn't it about time we bumped curl to
 1.0.0?
@@ -24,7 +24,7 @@ Well, it may not be so simple.  If you haven't noticed, we've been talking
 course, and one of cujoJS's [core principles](http://cujojs.com/manifesto.html)
 is to embrace the future.  More than a few times we’ve asked:
 
-> What do the cujoJS projects -- especially curl and cram -- look like in an
+> What do the cujoJS projects look like in an
 ES6 world?  Are curl and cram even needed at all?
 
 <a name="jump"></a>
@@ -51,15 +51,15 @@ got a 4-5 year transition period ahead of us.
 
 We believe the best way is to immediately start emulating the future via shims
 and "transpilers".  In such a world, curl should adopt the ES6 Loader API and
-provide a simple way for you to configure your "legacy", AMD and CJS packages.
+provide a simple way for you to configure your "legacy" AMD and CJS packages.
 As soon as you feel comfortable with the quality and robustness of ES6-to-AMD
-"transpilers", you can start authoring in -- or refactoring to -- ES6 format.
+"transpilers", you could start authoring in -- or refactoring to -- ES6 format.
 
-ES6 loaders will be able to handle ES6 modules alongside AMD or CommonJS.
-However, it's up to us, the community, to write the code to make these legacy
-modules work.  curl already has a lot of the necessary code, but it's not just
-a simple refactoring task to adapt plugins and module loaders to ES6
-"pipelines".
+ES6 loaders will have the necessary hooks to handle ES6 modules alongside AMD
+or CommonJS.  However, it's up to us, the community, to write the code to make
+these legacy modules work.  curl already has a lot of the necessary code, but
+it's not just a simple refactoring task to adapt plugins and module loaders to
+ES6 "pipelines".
 
 Actually, plugins are problematic in ES6.  As of now, the
 mostly-sync ES6 Loader API won't allow many plugins to work seamlessly.

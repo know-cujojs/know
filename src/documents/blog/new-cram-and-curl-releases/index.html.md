@@ -37,10 +37,13 @@ or updated via npm:
 Read more about the new cram.js
 [releases](https://github.com/cujojs/cram/releases/).
 
-What's next for cram.js?  It's time to elevate cram.js's "official" status to
-"beta", but we'll need more unit tests before that.  We're also prototyping a
-JavaScript API so cram.js could be used as a grunt plugin, for instance.
-Outputting multiple, coordinated bundles would be nice to have, too.
+## What's next for cram.js?  
+
+It feels like it's time to elevate cram.js's
+"official" status to "beta", but we'll need more unit tests before that.
+We're also prototyping a JavaScript API so cram.js could be used as a grunt
+plugin, for instance.  Outputting multiple, coordinated bundles would be 
+nice to have, too.
 
 ## curl.js gets some much-needed updates
 
@@ -103,6 +106,8 @@ curl.js can be installed using bower:
 `bower install --save curl#~0.8`
 
 Read more about the curl.js [releases](https://github.com/cujojs/curl/releases).
+
+## What's next for curl.js?  
 
 curl.js will get a [folder reorg](https://github.com/cujojs/curl/issues/178)
 in the very near future, as well as centralized docs.  curl may also get a
