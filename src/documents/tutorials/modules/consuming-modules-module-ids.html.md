@@ -150,7 +150,7 @@ define(function (require) {
 	var Payee = require("../../common/payee/Payee");
 
 	// BAD: normalizes to "../util/date" -- a URL, not an ID!
-	var Date = require("../../../util/Date");
+	var Date = require("../../../../util/Date");
 
 	// GOOD: use an absolute id to reference a different package
 	var Date = require("util/Date"); // "Date" module in the "util" package
