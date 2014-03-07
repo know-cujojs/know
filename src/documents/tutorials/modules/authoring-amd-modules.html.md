@@ -22,9 +22,11 @@ Authoring AMD modules is super easy.  There are just three things to remember:
 
 Let's start with `define()`.  The `define` function announces to the AMD environment that you wish to declare a module.  The signature of this function is pretty flexible, but let's start by focusing on the most common usage.
 
-  define(dependencyIds, factoryFunction);
+```
+define([<array of module ids>], <factory function>);
+```
 
-As you can see from the first parameter, `dependencyIds`, you can pass an array of ids into `define`.  These are the ids of other modules that your module requires to do its work.  The second parameter, `factoryFunction`, is a function that creates your module and will be run *exactly once*.  The factory is called with the dependent modules as parameters.  Furthermore, it is guaranteed to run only after all of the dependencies are known to be available.  In practice, the factory typically runs just before it's needed.
+As you can see from the first parameter, you can pass an array of ids into `define`.  These are the ids of other modules that your module depends upon to do its work.  The second parameter is a function that creates your module and will be run *exactly once*.  The factory is called with the dependent modules as parameters.  Furthermore, it is guaranteed to run only after all of the dependent modules are known to be available.  In most systems, the factory runs just before it's needed.
 
 Here's a simple example.
 
