@@ -1,17 +1,8 @@
+@import "cujojs.css";
+
 /*
   Font Custom - icon webfonts made simple
 */
-
-@font-face {
-  font-family: 'cujojs';
-  src:url('cujojs.eot');
-  src:url('cujojs.eot?#iefix') format('embedded-opentype'),
-    url('cujojs.woff') format('woff'),
-    url('cujojs.ttf') format('truetype'),
-    url('cujojs.svg#cujojs') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 
 /*
   Bootstrap Overrides
@@ -70,16 +61,18 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   Icon Classes
 */
 
-.icon-cola:before     { content: "\f100"; }
-.icon-cram:before     { content: "\f101"; }
-.icon-curl:before     { content: "\f102"; }
-.icon-meld:before     { content: "\f103"; }
-.icon-msgs:before     { content: "\f104"; }
-.icon-poly:before     { content: "\f105"; }
-.icon-rest:before     { content: "\f106"; }
-.icon-when:before     { content: "\f107"; }
-.icon-wire:before     { content: "\f108"; }
-.icon-twitter:before  { content: "\e000"; }
-.icon-github:before   { content: "\e001"; }
-.icon-github-2:before { content: "\e002"; }
-.icon-github-3:before { content: "\e003"; }
+.icon-twitter:before {
+	content: "\e000";
+}
+
+.icon-github:before {
+	content: "\e001";
+}
+
+.icon-github-2:before {
+	content: "\e002";
+}
+
+.icon-github-3:before {
+	content: "\e003";
+}
