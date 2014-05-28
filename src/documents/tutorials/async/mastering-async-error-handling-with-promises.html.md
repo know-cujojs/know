@@ -149,7 +149,7 @@ First, let's use `then()` to ensure that `alwaysCleanup` will execute in all cas
 function getTheResult() {
 
     return thisMightFail()
-        .otherwise(recoverFromFailure);
+        .otherwise(recoverFromFailure)
         .then(alwaysCleanup, alwaysCleanup);
 }
 ```
@@ -176,7 +176,7 @@ function alwaysCleanupWrapper(resultOrError) {
 function getTheResult() {
 
     return thisMightFail()
-        .otherwise(recoverFromFailure);
+        .otherwise(recoverFromFailure)
         .then(alwaysCleanupWrapper, alwaysCleanupWrapper);
 }
 ```
@@ -208,7 +208,7 @@ function alwaysCleanupOnFailure(error) {
 function getTheResult() {
 
     return thisMightFail()
-        .otherwise(recoverFromFailure);
+        .otherwise(recoverFromFailure)
         .then(alwaysCleanupOnSuccess, alwaysCleanupOnFailure);
 
 }
